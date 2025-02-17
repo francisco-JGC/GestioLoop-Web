@@ -1,15 +1,18 @@
 import { Button } from "../../shared/components/Button"
 import 'boxicons/css/boxicons.min.css';
+import { useTranslation } from "react-i18next";
 
 export const Page404 = () => {
+  const { t } = useTranslation()
+
   return (
     <section>
       <div className="container flex items-center justify-center min-h-screen px-6 py-12 mx-auto">
         <div className="w-full ">
           <div className="flex flex-col items-center max-w-lg mx-auto text-center">
-            <p className="text-sm font-medium text-blue-500">404 error</p>
-            <h1 className="mt-3 text-2xl font-semibold text-gray-800">We lost this page</h1>
-            <p className="mt-4 text-gray-500">We searched high and low, but couldn’t find what you’re looking for.Let’s find a better place for you to go.</p>
+            <p className="text-sm font-medium text-blue-500">{t('page_404.title')}</p>
+            <h1 className="mt-3 text-2xl font-semibold text-gray-800">{t('page_404.subject')}</h1>
+            <p className="mt-4 text-gray-500">{t('page_404.description')}</p>
 
             <div className="flex items-center w-full mt-6 gap-x-3 shrink-0 sm:w-auto">
               <Button
@@ -22,14 +25,14 @@ export const Page404 = () => {
                 }
               >
 
-                <span>Go back</span>
+                <span>{t('page_404.buttons.back')}</span>
               </Button>
 
               <Button
                 variant="primary"
                 useAnimation
               >
-                Take me home
+                <span>{t('page_404.buttons.take_me_home')}</span>
               </Button>
             </div>
           </div>
