@@ -7,5 +7,15 @@
       "back": "Go Back",
       "take_me_home": "Take me home"
     }
+  },
+  "home_page": {
+    "header": {
+      "home": "Home",
+      "services": "Services",
+      "contact_us": "Contact Us",
+      "pricing": "Pricing",
+      "login": "Sign In",
+      "register": "Register"
+    }
   }
 }

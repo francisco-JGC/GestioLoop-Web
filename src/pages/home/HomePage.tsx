@@ -1,5 +1,9 @@
+import { PageLayout } from "../layouts/pageLayout"
+
 export const HomePage = () => {
-  return <div>
-    welcome
-  </div>
+  return (
+    <PageLayout>
+      welcome
+    </PageLayout>
+  )
 }

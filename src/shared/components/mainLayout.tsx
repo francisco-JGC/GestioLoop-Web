@@ -7,9 +7,9 @@ interface IProps {
 
 const MainLayout = ({ children }: IProps) => {
   return (
-    <main>
+    <>
       {children}
-    </main>
+    </>
   );
 };
 
