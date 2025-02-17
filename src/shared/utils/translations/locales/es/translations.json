@@ -1,0 +1,11 @@
+{
+  "page_404": {
+    "title": "Error 404",
+    "subject": "Hemos perdido esta página",
+    "description": "Buscamos por todos lados, pero no pudimos encontrar lo que buscas. Vamos a encontrar un mejor lugar para que vayas.",
+    "buttons": {
+      "back": "Regresar",
+      "take_me_home": "Llévame a casa"
+    }
+  }
+}
