@@ -1,7 +1,11 @@
 {
-  "name": "lc-web",
+  "name": "gestioloop-web",
   "private": true,
   "version": "0.0.0",
+  "author": {
+    "name": "Ing. Francisco Garcia",
+    "email": "jjjchico1@gmail.com"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
