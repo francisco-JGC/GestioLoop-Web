@@ -16,13 +16,13 @@ export const SigninPage = () => {
         <div className="flex items-center justify-center gap-10 w-full">
           <div className="w-full flex flex-col gap-10 max-w-[400px]">
             <div>
-              <span className="text-lg">{t('signin_page.title')}</span>
+              <span className="text-lg">{t('login.title')}</span>
             </div>
             <form className="flex flex-col gap-6"
               autoComplete="off"
             >
               <Input
-                placeholder={t('signin_page.placeholder-email')}
+                placeholder={t('login.placeholder-email')}
                 type="email"
                 required
                 className="rounded-full p-6 shadow-none"
@@ -30,7 +30,7 @@ export const SigninPage = () => {
                 name="email"
               />
               <Input
-                placeholder={t('signin_page.placeholder-password')}
+                placeholder={t('login.placeholder-password')}
                 type="password"
                 required
                 className="rounded-full p-6 shadow-none"
@@ -38,9 +38,9 @@ export const SigninPage = () => {
                 name="password"
               />
               <div className="flex justify-between items-center">
-                <Link to={"#"} className="text-lg">{t('signin_page.forgot-password')}</Link>
+                <Link to={"#"} className="text-lg">{t('login.forgot-password')}</Link>
                 <Button className="rounded-full p-6">
-                  {t('signin_page.signin')}
+                  {t('login.signin')}
                 </Button>
               </div>
             </form>

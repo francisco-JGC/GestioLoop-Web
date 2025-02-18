@@ -28,5 +28,16 @@
       "item3": "Powerfull",
       "item4": "Secure"
     }
+  },
+  "login": {
+    "title": "Login to your account",
+    "placeholder-email": "Your Email",
+    "placeholder-password": "********",
+    "placeholder-username": "Username",
+    "placeholder-phone_number": "+505 1234 5678",
+    "forgot-password": "Forgot password?",
+    "signin": "Log in",
+    "register": "Register",
+    "comment": "first step to success"
   }
 }
