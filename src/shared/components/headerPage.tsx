@@ -1,12 +1,14 @@
 import { Button } from "@/components/ui/button"
 import { PAGE_LINKS } from "@/core/routes/pageLinks"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { NavLink } from "react-router-dom"
 
 export const HeaderPage = () => {
   const { t } = useTranslation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [lastScrollY, setLastScrollY] = useState(0)
+  const [isHidden, setIsHidden] = useState(false)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -16,8 +18,25 @@ export const HeaderPage = () => {
     setIsMenuOpen(false)
   }
 
+  const handleScroll = () => {
+    if (window.scrollY > lastScrollY) {
+      setIsHidden(true)
+    } else {
+      setIsHidden(false)
+    }
+    setLastScrollY(window.scrollY)
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lastScrollY])
+
   return (
-    <header className="flex justify-between items-center py-4 px-6 md:px-12 w-full bg-white  fixed top-0 left-0 z-50">
+    <header className={`flex justify-between items-center py-4 px-6 md:px-12 w-full bg-white fixed top-0 left-0 z-50 transition-transform duration-300 ${isHidden ? '-translate-y-full' : 'translate-y-0'}`}>
       <div className="text-xl font-bold">
         <NavLink to="/" onClick={closeMenu}>
           GestioLoop.
@@ -32,9 +51,9 @@ export const HeaderPage = () => {
       </button>
 
       <nav
-        className={`fixed top-0 left-0 w-full h-full bg-white transition-transform duration-300 ease-in-out transform 
-          ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} 
-          md:hidden`}
+        className={`fixed top-0 left-0 w-full h-screen bg-white transition-transform duration-300 ease-in-out transform 
+    ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} 
+    md:hidden overflow-y-auto`}
       >
         <button
           className="absolute top-4 right-4 text-3xl text-gray-600 md:hidden"
@@ -68,6 +87,7 @@ export const HeaderPage = () => {
           </Button>
         </div>
       </nav>
+
 
       <nav className="hidden md:flex md:items-center md:gap-8">
         <ul className="flex items-center gap-8">
