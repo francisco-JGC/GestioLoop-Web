@@ -1,4 +1,15 @@
 {
+  "alert_message": {
+    "login": {
+      "error-login": {
+        "title": "Error de solicitud",
+        "Login failed": "Por favor, verifica tus credenciales.",
+        "Failed to refresh token": "Error al refrescar la sesión",
+        "Session check failed": "Error al verificar la sesión",
+        "bad request": "Solicitud incorrecta"
+      }
+    }
+  },
   "page_404": {
     "title": "Error 404",
     "subject": "Hemos perdido esta página",
