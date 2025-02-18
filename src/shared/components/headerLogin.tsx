@@ -17,7 +17,7 @@ export const HeaderLogin = ({ show_button }: IProps) => {
         </NavLink>
       </div>
 
-      <div className="hidden md:flex md:items-center md:gap-4">
+      <div className="md:flex md:items-center md:gap-4">
         {
           show_button === 'login' ? (
             <NavLink to={'/sign-in'}>

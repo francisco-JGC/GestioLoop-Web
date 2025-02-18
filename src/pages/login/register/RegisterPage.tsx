@@ -11,7 +11,7 @@ export const RegisterPage = () => {
     <div>
       <HeaderLogin show_button="login" />
 
-      <div className="flex w-full min-h-screen justify-center items-center max-w-[1300px] p-4">
+      <div className="flex w-full mt-30 justify-center items-center p-4">
         <div className="flex flex-col md:flex-row items-center justify-center gap-10 w-full">
           <div className="w-full flex flex-col gap-6 max-w-[400px]">
             <div>
