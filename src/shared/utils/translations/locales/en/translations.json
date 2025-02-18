@@ -16,6 +16,11 @@
       "pricing": "Pricing",
       "login": "Sign In",
       "register": "Register"
+    },
+    "home": {
+      "subtitle": "Business growth solution on a single platform.",
+      "title": "Managing your business and services has never been easier",
+      "description": "Easily take control of your business and services with a seamless management experience like never before."
     }
   }
 }
