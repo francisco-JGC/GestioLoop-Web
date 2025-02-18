@@ -90,10 +90,18 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('./assets/fonts/HelveticaNeue-Medium.woff2') format('woff2'),
+    url('./assets/fonts/HelveticaNeue-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    font-family: 'Inter';
+    font-family: 'HelveticaNeue', 'Inter';
   }
   body {
     @apply bg-background text-foreground;
