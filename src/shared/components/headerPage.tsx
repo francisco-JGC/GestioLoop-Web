@@ -66,7 +66,7 @@ export const HeaderPage = () => {
           {
             PAGE_LINKS.map((item, index) => (
               <li
-                className="relative cursor-pointer font-semibold text-xl hover:text-blue-600 transition-colors duration-200"
+                className="relative cursor-pointer font-semibold text-lg hover:text-blue-600 transition-colors duration-200"
                 key={index}
                 onClick={closeMenu}
               >
