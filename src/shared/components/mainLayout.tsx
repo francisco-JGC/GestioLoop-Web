@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { Toaster } from 'sonner';
 import 'boxicons/css/boxicons.min.css';
 
 interface IProps {
@@ -9,6 +10,7 @@ const MainLayout = ({ children }: IProps) => {
   return (
     <>
       {children}
+      <Toaster />
     </>
   );
 };
