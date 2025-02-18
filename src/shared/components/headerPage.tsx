@@ -1,24 +1,83 @@
 import { Button } from "@/components/ui/button"
 import { PAGE_LINKS } from "@/core/routes/pageLinks"
+import { useState } from "react"
 import { useTranslation } from "react-i18next"
 import { NavLink } from "react-router-dom"
 
 export const HeaderPage = () => {
   const { t } = useTranslation()
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
+  const closeMenu = () => {
+    setIsMenuOpen(false)
+  }
 
   return (
-    <header className="flex justify-between items-center gap-8 py-6 px-15">
-      <div>
-        <h3 className="font-bold text-xl">GestioLoop.</h3>
+    <header className="flex justify-between items-center py-4 px-6 md:px-12 w-full bg-white  fixed top-0 left-0 z-50">
+      <div className="text-xl font-bold">
+        <NavLink to="/" onClick={closeMenu}>
+          GestioLoop.
+        </NavLink>
       </div>
-      <nav>
+
+      <button
+        className="text-2xl md:hidden focus:outline-none"
+        onClick={toggleMenu}
+      >
+        <i className={`bx ${isMenuOpen ? 'bx-x' : 'bx-menu'}`}></i>
+      </button>
+
+      <nav
+        className={`fixed top-0 left-0 w-full h-full bg-white transition-transform duration-300 ease-in-out transform 
+          ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} 
+          md:hidden`}
+      >
+        <button
+          className="absolute top-4 right-4 text-3xl text-gray-600 md:hidden"
+          onClick={closeMenu}
+        >
+          <i className='bx bx-x'></i>
+        </button>
+
+        <ul className="flex flex-col items-center gap-8 p-6 mt-20">
+          {
+            PAGE_LINKS.map((item, index) => (
+              <li
+                className="relative cursor-pointer font-semibold text-xl hover:text-blue-600 transition-colors duration-200"
+                key={index}
+                onClick={closeMenu}
+              >
+                <NavLink to={`#${item.path}`}>
+                  <span>{t(item.label)}</span>
+                </NavLink>
+              </li>
+            ))
+          }
+        </ul>
+
+        <div className="flex flex-col items-center gap-4 p-6">
+          <Button onClick={closeMenu}>
+            {t('home_page.header.login')}
+          </Button>
+          <Button variant={'secondary'} onClick={closeMenu}>
+            {t('home_page.header.register')}
+          </Button>
+        </div>
+      </nav>
+
+      <nav className="hidden md:flex md:items-center md:gap-8">
         <ul className="flex items-center gap-8">
           {
             PAGE_LINKS.map((item, index) => (
-              <li className="relative cursor-pointer py-2 px-4 font-semibold" key={index}>
-                <NavLink
-                  to={`#${item.path}`}
-                >
+              <li
+                className="relative cursor-pointer font-semibold text-lg hover:text-primary transition-colors duration-200"
+                key={index}
+              >
+                <NavLink to={`#${item.path}`}>
                   <span>{t(item.label)}</span>
                 </NavLink>
               </li>
@@ -26,7 +85,8 @@ export const HeaderPage = () => {
           }
         </ul>
       </nav>
-      <div className="flex items-center gap-4">
+
+      <div className="hidden md:flex md:items-center md:gap-4">
         <Button>
           {t('home_page.header.login')}
         </Button>

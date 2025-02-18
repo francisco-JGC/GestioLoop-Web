@@ -102,6 +102,7 @@
   * {
     @apply border-border outline-ring/50;
     font-family: 'HelveticaNeue', 'Inter';
+    font-size: 0.9em;
   }
   body {
     @apply bg-background text-foreground;

@@ -6,7 +6,7 @@ export const Home = () => {
   const { t } = useTranslation()
 
   return (
-    <div className="relative w-full flex flex-col items-center justify-center mt-20 gap-8 px-4">
+    <div className="relative w-full flex flex-col items-center justify-center mt-30 gap-8 px-4">
       <div className="w-full text-center flex flex-col gap-4 md:w-[75%] lg:w-[50%]">
         <span className="font-semibold text-lg">{t('home_page.home.subtitle')}</span>
         <h1 className="font-bold text-4xl md:text-5xl">{t('home_page.home.title')}</h1>
