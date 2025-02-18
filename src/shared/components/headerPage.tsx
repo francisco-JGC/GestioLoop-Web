@@ -84,7 +84,7 @@ export const HeaderPage = () => {
               {t('home_page.header.login')}
             </Button>
           </Link>
-          <Link to={'/ register'} onClick={closeMenu}>
+          <Link to={'/register'} onClick={closeMenu}>
             <Button variant={'secondary'} className="rounded-full">
               {t('home_page.header.register')}
             </Button>
@@ -116,7 +116,7 @@ export const HeaderPage = () => {
             {t('home_page.header.login')}
           </Button>
         </Link>
-        <Link to={'/ register'}>
+        <Link to={'/register'}>
           <Button variant={'secondary'} className="rounded-full">
             {t('home_page.header.register')}
           </Button>
