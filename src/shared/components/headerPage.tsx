@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 import { PAGE_LINKS } from "@/core/routes/pageLinks"
 import { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 
 export const HeaderPage = () => {
   const { t } = useTranslation()
@@ -79,12 +79,16 @@ export const HeaderPage = () => {
         </ul>
 
         <div className="flex flex-col items-center gap-4 p-6">
-          <Button onClick={closeMenu}>
-            {t('home_page.header.login')}
-          </Button>
-          <Button variant={'secondary'} onClick={closeMenu}>
-            {t('home_page.header.register')}
-          </Button>
+          <Link to={'/sign-in'} onClick={closeMenu}>
+            <Button className="rounded-full">
+              {t('home_page.header.login')}
+            </Button>
+          </Link>
+          <Link to={'/ register'} onClick={closeMenu}>
+            <Button variant={'secondary'} className="rounded-full">
+              {t('home_page.header.register')}
+            </Button>
+          </Link>
         </div>
       </nav>
 
@@ -107,12 +111,16 @@ export const HeaderPage = () => {
       </nav>
 
       <div className="hidden md:flex md:items-center md:gap-4">
-        <Button>
-          {t('home_page.header.login')}
-        </Button>
-        <Button variant={'secondary'}>
-          {t('home_page.header.register')}
-        </Button>
+        <Link to={'/sign-in'}>
+          <Button className="rounded-full">
+            {t('home_page.header.login')}
+          </Button>
+        </Link>
+        <Link to={'/ register'}>
+          <Button variant={'secondary'} className="rounded-full">
+            {t('home_page.header.register')}
+          </Button>
+        </Link>
       </div>
     </header>
   )
