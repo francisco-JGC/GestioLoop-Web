@@ -15,12 +15,14 @@ export const Home = () => {
 
       <div className="flex flex-col gap-4 w-full max-w-[450px] md:flex-row md:justify-center">
         <Input
-          className="rounded-full p-4 w-full shadow-none"
+          className="rounded-full p-6 w-full shadow-none"
           placeholder={t('home_page.home.input-placeholder')}
         />
-        <Button className="p-4 rounded-full flex items-center justify-center">
-          {t('home_page.home.action-button')}
-          <i className='bx bx-right-arrow-alt text-xl'></i>
+        <Button className="p-6 rounded-full flex items-center justify-center">
+          <span>
+            {t('home_page.home.action-button')}
+          </span>
+          <i className='bx bx-right-arrow-alt text-lg'></i>
         </Button>
       </div>
 
