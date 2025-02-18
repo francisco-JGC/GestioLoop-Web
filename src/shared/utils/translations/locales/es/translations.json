@@ -7,5 +7,37 @@
       "back": "Regresar",
       "take_me_home": "Llévame a casa"
     }
+  },
+  "home_page": {
+    "header": {
+      "home": "Inicio",
+      "services": "Servicios",
+      "contact_us": "Contáctanos",
+      "pricing": "Precios",
+      "login": "Iniciar Sesión",
+      "register": "Registrarse"
+    },
+    "home": {
+      "subtitle": "Solución de crecimiento empresarial en una sola plataforma.",
+      "title": "Gestionar tu negocio y servicios nunca ha sido tan fácil",
+      "description": "Toma el control de tu negocio y servicios fácilmente con una experiencia de gestión sin precedentes.",
+      "input-placeholder": "Regístrate con tu correo electrónico",
+      "action-button": "Enviar",
+      "item1": "Registro Gratuito",
+      "item2": "Excelente Servicio",
+      "item3": "Herramienta Potente",
+      "item4": "Seguro"
+    }
+  },
+  "login": {
+    "title": "Inicia sesión en tu cuenta",
+    "placeholder-email": "Tu Correo Electrónico",
+    "placeholder-password": "********",
+    "placeholder-username": "Nombre de Usuario",
+    "placeholder-phone_number": "+505 1234 5678",
+    "forgot-password": "¿Olvidaste tu contraseña?",
+    "signin": "Iniciar Sesión",
+    "register": "Registrarse",
+    "comment": "primer paso hacia el éxito"
   }
 }
