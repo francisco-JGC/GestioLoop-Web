@@ -10,12 +10,7 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { useEffect } from "react"
 import { toast } from 'sonner'
 import { Loader2 } from "lucide-react";
-
-
-interface Signin {
-  session_field: string
-  password: string
-}
+import type { Signin } from "@/infrastructure/api/types/login.types"
 
 export const SigninPage = () => {
   const { t } = useTranslation()
