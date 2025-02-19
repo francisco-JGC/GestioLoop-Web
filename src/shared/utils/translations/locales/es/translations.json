@@ -7,6 +7,12 @@
         "Failed to refresh token": "Error al refrescar la sesión",
         "Session check failed": "Error al verificar la sesión",
         "bad request": "Solicitud incorrecta"
+      },
+      "register-user": "Usuario registrado",
+      "loading-comment": "Espera...",
+      "register": {
+        "error": "Oops, error. Inténtalo de nuevo",
+        "success": "Información registrada"
       }
     }
   },

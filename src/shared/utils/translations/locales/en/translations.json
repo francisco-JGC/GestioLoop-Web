@@ -7,6 +7,12 @@
         "Failed to refresh token": "Failed to refresh token",
         "Session check failed": "Session check failed",
         "bad request": "Bad Request"
+      },
+      "register-user": "Registered user",
+      "loading-comment": "Wait...",
+      "register": {
+        "error": "Opps Error, try again",
+        "success": "Registered information"
       }
     }
   },
