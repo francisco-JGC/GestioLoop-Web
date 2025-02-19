@@ -1,5 +1,6 @@
 import { apiGL } from '../axiosClient'
 import { HttpResponse } from '../types/httpResponse'
+import { Register } from '../types/login.types'
 
 export const login = async (
   session_field: string,
@@ -21,4 +22,9 @@ export const checkSession = async (): Promise<HttpResponse> => {
 
 export const logout = async (): Promise<void> => {
   await apiGL.post('/auth/logout')
+}
+
+export const registerUser = async (data: Register): Promise<HttpResponse> => {
+  const response = await apiGL.post('/auth/register', data)
+  return response.data
 }
