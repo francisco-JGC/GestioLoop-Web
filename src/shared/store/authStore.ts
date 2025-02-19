@@ -8,7 +8,7 @@ import {
 } from '@/infrastructure/api/hooks/authHook'
 import { HttpStatusCode } from 'axios'
 
-interface User {
+export interface User {
   id: string
   email: string
   username: string
@@ -29,8 +29,8 @@ interface AuthState {
 }
 
 const useAuthStore = create<AuthState>((set) => ({
-  user: null,
-  isAuthenticated: false,
+  user: JSON.parse(localStorage.getItem('userGL') || 'null'),
+  isAuthenticated: !!localStorage.getItem('userGL'),
   isLoading: false,
   error: null,
 
@@ -41,6 +41,7 @@ const useAuthStore = create<AuthState>((set) => ({
       const response = await login(session_field, password)
 
       if (response.statusCode === HttpStatusCode.Ok) {
+        localStorage.setItem('userGL', JSON.stringify(response.data))
         set({ isAuthenticated: true, user: response.data, error: null })
       } else {
         set({
@@ -75,6 +76,7 @@ const useAuthStore = create<AuthState>((set) => ({
 
     try {
       await logout()
+      localStorage.removeItem('userGL')
       set({ user: null, isAuthenticated: false, error: null })
     } catch (error) {
       set({ error: 'bad request' })
@@ -86,6 +88,12 @@ const useAuthStore = create<AuthState>((set) => ({
     set({ error: null })
 
     try {
+      const user = JSON.parse(localStorage.getItem('userGL') || 'null')
+      if (!user) {
+        set({ isAuthenticated: false, user: null })
+        return
+      }
+
       const response = await checkSession()
 
       if (response.statusCode !== HttpStatusCode.Ok) {
