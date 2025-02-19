@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { apiGL } from '../axiosClient'
 import { HttpResponse } from '../types/httpResponse'
 import { Register } from '../types/login.types'
@@ -25,6 +26,10 @@ export const logout = async (): Promise<void> => {
 }
 
 export const registerUser = async (data: Register): Promise<HttpResponse> => {
-  const response = await apiGL.post('/auth/register', data)
-  return response.data
+  try {
+    const response = await apiGL.post('/auth/register', data)
+    return response?.data
+  } catch (e: any) {
+    return e.response.data
+  }
 }

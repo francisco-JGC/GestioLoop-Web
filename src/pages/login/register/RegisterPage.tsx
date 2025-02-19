@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useTranslation } from "react-i18next"
@@ -25,17 +26,23 @@ export const RegisterPage = () => {
   })
 
   const onSubmit: SubmitHandler<Register> = async (data) => {
-    toast.loading(t(''))
-    const response = await registerUser(data)
-
+    toast.loading(t('alert_message.login.register-user'), {
+      description: t('alert_message.login.loading-comment')
+    })
+    try {
+      const response = await registerUser(data)
+      if (response.statusCode === HttpStatusCode.Ok) {
+        toast.success(t('alert_message.login.register.success'))
+        navigate('/sign-in')
+      } else {
+        toast.error(t('alert_message.login.register.error'))
+      }
+    } catch (e: any) {
+      console.log(e)
+    }
     toast.dismiss()
 
-    if (response.statusCode === HttpStatusCode.Ok) {
-      toast.success(t(''))
-      navigate('/sign-in')
-    } else {
-      toast.error(t(''))
-    }
+
   }
 
   return (
