@@ -3,7 +3,9 @@ import { DashboardLayout } from "../layouts/dashboardLayout"
 export const DashboardPage = () => {
   return (
     <DashboardLayout>
-      <div>HOAKJD</div>
+      <div>
+        <h1>Dashboard page</h1>
+      </div>
     </DashboardLayout>
   )
 }
