@@ -7,16 +7,14 @@ import {
   BreadcrumbSeparator
 } from "@/components/ui/breadcrumb"
 import { Link } from "react-router-dom"
+import { useBreadcrumbs } from "@/shared/hooks/useBreadcrumbs"
 
 interface IProps {
   children: React.ReactNode
-  breadcrumbList: {
-    path: string,
-    label: string
-  }[]
 }
 
-export const DashboardLayout = ({ children, breadcrumbList }: IProps) => {
+export const DashboardLayout = ({ children }: IProps) => {
+  const breadcrumbList = useBreadcrumbs()
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -29,7 +27,7 @@ export const DashboardLayout = ({ children, breadcrumbList }: IProps) => {
                 breadcrumbList?.map((item, index) => (
                   <>
                     <BreadcrumbSeparator />
-                    <BreadcrumbItem key={index} className="hover:text-black">
+                    <BreadcrumbItem key={index} className="hover:text-black capitalize">
                       <Link to={item.path} >{item.label}</Link>
                     </BreadcrumbItem>
                   </>
