@@ -23,20 +23,26 @@ import {
 import useBranchesStore from "@/shared/store/branchesStore"
 import { useEffect } from "react"
 import { getBranches } from "@/infrastructure/api/hooks/branchesHook"
+import { toast } from "sonner"
 
 export function NavBranch() {
   const { isMobile } = useSidebar()
   const { branches, selectedBranch, setBranches, setSelectedBranch } = useBranchesStore()
 
   useEffect(() => {
-    if (!branches) {
+    if (!branches || branches.length === 0) {
       getBranches()
         .then((response) => {
-          setBranches(response ?? [])
-          setSelectedBranch(response ? response[0].id : '')
+          if (response && response.length > 0) {
+            setBranches(response);
+            setSelectedBranch(response[0].id);
+          }
         })
+        .catch(() => toast.error('error'));
     }
-  }, [branches, setBranches, setSelectedBranch])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [getBranches, setBranches, setSelectedBranch]);
+
 
   return (
     <SidebarMenu>
@@ -65,7 +71,7 @@ export function NavBranch() {
             sideOffset={4}
           >
             {
-              branches?.map((branch) => (
+              branches?.length ? branches.map((branch) => (
                 <div key={branch.id} className={`${branch.id === selectedBranch?.id && 'font-semibold'}`}
                   onClick={() => setSelectedBranch(branch.id)}
                 >
@@ -75,7 +81,11 @@ export function NavBranch() {
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                 </div>
-              ))
+              )) : (
+                <div className="p-2">
+                  No se cargaron las branches
+                </div>
+              )
             }
           </DropdownMenuContent>
         </DropdownMenu>
