@@ -49,7 +49,8 @@
   },
   "login": {
     "title": "Login to your account",
-    "placeholder-email": "Your Email",
+    "placeholder-email": "Email",
+    "placeholder-session_field": "Enter your Email or Username",
     "placeholder-password": "********",
     "placeholder-username": "Username",
     "placeholder-phone_number": "+505 1234 5678",

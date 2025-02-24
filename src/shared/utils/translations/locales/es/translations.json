@@ -4,6 +4,7 @@
       "error-login": {
         "title": "Error de solicitud",
         "Login failed": "Por favor, verifica tus credenciales.",
+        "Logout failed": "Fallo al cerrar sesión",
         "Failed to refresh token": "Error al refrescar la sesión",
         "Session check failed": "Error al verificar la sesión",
         "bad request": "Solicitud incorrecta"
@@ -49,6 +50,7 @@
   "login": {
     "title": "Inicia sesión en tu cuenta",
     "placeholder-email": "Tu Correo Electrónico",
+    "placeholder-session_field": "Ingresa tu correo o nombre de usuario",
     "placeholder-password": "********",
     "placeholder-username": "Nombre de Usuario",
     "placeholder-phone_number": "+505 1234 5678",

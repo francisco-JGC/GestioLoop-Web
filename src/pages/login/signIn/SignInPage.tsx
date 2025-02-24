@@ -56,8 +56,8 @@ export const SigninPage = () => {
             </div>
             <form className="flex flex-col gap-6" autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
               <Input
-                placeholder={t('login.placeholder-email')}
-                type="email"
+                placeholder={t('login.placeholder-session_field')}
+                type="text"
                 required
                 className="rounded-full p-6 shadow-none"
                 autoComplete="off"
