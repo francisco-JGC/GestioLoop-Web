@@ -1,11 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-
-interface Branch {
-  id: string
-  name: string
-  address: string
-}
+import { Branch } from '@/infrastructure/api/types/branch'
 
 interface BranchState {
   branches: Branch[]
