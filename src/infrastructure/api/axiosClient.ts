@@ -1,10 +1,12 @@
 import useAuthStore from '@/shared/store/authStore'
+import useBranchesStore from '@/shared/store/branchesStore'
 import axios, {
   AxiosInstance,
   AxiosRequestConfig,
   AxiosResponse,
   AxiosError,
   HttpStatusCode,
+  InternalAxiosRequestConfig,
 } from 'axios'
 
 export const apiGL: AxiosInstance = axios.create({
@@ -14,6 +16,16 @@ export const apiGL: AxiosInstance = axios.create({
     'Content-Type': 'application/json',
   },
   withCredentials: true,
+})
+
+apiGL.interceptors.request.use((config: InternalAxiosRequestConfig) => {
+  const selectedBranch = useBranchesStore.getState().selectedBranch
+
+  if (selectedBranch) {
+    config.headers['X-Branch-ID'] = selectedBranch.id
+  }
+
+  return config
 })
 
 apiGL.interceptors.response.use(
