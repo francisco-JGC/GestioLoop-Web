@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { apiGL } from '../axiosClient'
+import { apiGL } from '../../../core/config/axiosClient'
 import { HttpResponse } from '../types/httpResponse'
 import { Register } from '../types/login.types'
 

@@ -1,4 +1,4 @@
-import { apiGL } from '../axiosClient'
+import { apiGL } from '../../../core/config/axiosClient'
 import { Branch } from '../types/branch'
 
 export const getBranches = async (): Promise<Branch[] | null> => {
