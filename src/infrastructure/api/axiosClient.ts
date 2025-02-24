@@ -4,6 +4,7 @@ import axios, {
   AxiosRequestConfig,
   AxiosResponse,
   AxiosError,
+  HttpStatusCode,
 } from 'axios'
 
 export const apiGL: AxiosInstance = axios.create({
@@ -23,7 +24,7 @@ apiGL.interceptors.response.use(
     }
 
     if (
-      error.response?.status === 401 &&
+      error.response?.status === HttpStatusCode.Unauthorized &&
       !originalRequest._retry &&
       !originalRequest.url?.includes('/auth/refresh-token')
     ) {
