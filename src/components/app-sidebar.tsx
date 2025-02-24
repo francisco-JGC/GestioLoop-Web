@@ -25,7 +25,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import useAuthStore, { User } from "@/shared/store/authStore"
 import { Link } from "react-router-dom"
 
 const data = {
@@ -139,7 +138,6 @@ const data = {
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-  const { user } = useAuthStore()
   return (
     <Sidebar variant="sidebar" {...props}>
       <SidebarHeader>
