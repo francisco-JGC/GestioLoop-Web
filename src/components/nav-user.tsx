@@ -28,10 +28,17 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar"
 import useAuthStore from "@/shared/store/authStore"
+import useBranchesStore from "@/shared/store/branchesStore"
 
 export function NavUser() {
   const { isMobile } = useSidebar()
   const { user, logout } = useAuthStore()
+  const { setBranches } = useBranchesStore()
+
+  const handleLogout = () => {
+    setBranches([])
+    logout()
+  }
 
   return (
     <SidebarMenu>
@@ -94,7 +101,7 @@ export function NavUser() {
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={logout}>
+            <DropdownMenuItem onClick={handleLogout}>
               <LogOut />
               Log out
             </DropdownMenuItem>
