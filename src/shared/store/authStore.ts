@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 import {
   login,
   refreshToken,
@@ -28,85 +28,94 @@ interface AuthState {
   checkSession: () => Promise<void>
 }
 
-const useAuthStore = create<AuthState>((set) => ({
-  user: JSON.parse(localStorage.getItem('userGL') || 'null'),
-  isAuthenticated: !!localStorage.getItem('userGL'),
-  isLoading: false,
-  error: null,
+const useAuthStore = create<AuthState>()(
+  persist(
+    (set) => ({
+      user: null,
+      isAuthenticated: false,
+      isLoading: false,
+      error: null,
 
-  login: async (session_field, password) => {
-    set({ isLoading: true, error: null })
+      login: async (session_field, password) => {
+        set({ isLoading: true, error: null })
 
-    try {
-      const response = await login(session_field, password)
+        try {
+          const response = await login(session_field, password)
 
-      if (response.statusCode === HttpStatusCode.Ok) {
-        localStorage.setItem('userGL', JSON.stringify(response.data))
-        set({ isAuthenticated: true, user: response.data, error: null })
-      } else {
-        set({
-          error: 'Login failed',
-        })
-      }
-    } catch (e) {
-      set({
-        error: 'Login failed',
-      })
-    } finally {
-      set({ isLoading: false })
+          if (response.statusCode === HttpStatusCode.Ok) {
+            set({
+              isAuthenticated: true,
+              user: response.data,
+              error: null,
+            })
+          } else {
+            set({ error: 'Login failed' })
+          }
+        } catch (error) {
+          console.error('Login error:', error)
+          set({ error: 'Login failed' })
+        } finally {
+          set({ isLoading: false })
+        }
+      },
+
+      refreshToken: async () => {
+        set({ error: null })
+
+        try {
+          const response = await refreshToken()
+
+          if (response.statusCode !== HttpStatusCode.Ok) {
+            set({ isAuthenticated: false, user: null })
+          }
+        } catch (error) {
+          console.error('Token refresh error:', error)
+          set({ error: 'Failed to refresh token' })
+        }
+      },
+
+      logout: async () => {
+        set({ error: null })
+
+        try {
+          await logout()
+          set({ user: null, isAuthenticated: false, error: null })
+        } catch (error) {
+          console.error('Logout error:', error)
+          set({ error: 'Logout failed' })
+        }
+      },
+
+      checkSession: async () => {
+        set({ error: null })
+
+        try {
+          const response = await checkSession()
+
+          if (response.statusCode !== HttpStatusCode.Ok) {
+            set({ isAuthenticated: false, user: null })
+            throw new Error('Session check failed')
+          } else {
+            set({
+              user: response?.data?.user,
+              isAuthenticated: true,
+              error: null,
+            })
+          }
+        } catch (error) {
+          console.error('Session check error:', error)
+          set({
+            user: null,
+            isAuthenticated: false,
+            error: 'Session check failed',
+          })
+        }
+      },
+    }),
+    {
+      name: 'auth-store',
     }
-  },
-
-  refreshToken: async () => {
-    set({ error: null })
-
-    try {
-      const response = await refreshToken()
-
-      if (response.statusCode !== HttpStatusCode.Ok) {
-        set({ isAuthenticated: false, user: null })
-      }
-    } catch (e) {
-      set({ error: 'Failed to refresh token' })
-    }
-  },
-
-  logout: async () => {
-    set({ error: null })
-
-    try {
-      await logout()
-      localStorage.removeItem('userGL')
-      set({ user: null, isAuthenticated: false, error: null })
-    } catch (error) {
-      set({ error: 'bad request' })
-      throw error
-    }
-  },
-
-  checkSession: async () => {
-    set({ error: null })
-
-    try {
-      const user = JSON.parse(localStorage.getItem('userGL') || 'null')
-      if (!user) {
-        set({ isAuthenticated: false, user: null })
-        return
-      }
-
-      const response = await checkSession()
-
-      if (response.statusCode !== HttpStatusCode.Ok) {
-        set({ isAuthenticated: false, user: null })
-        throw new Error('Session check failed')
-      } else {
-        set({ user: response?.data?.user, isAuthenticated: true, error: null })
-      }
-    } catch (e) {
-      set({ user: null, isAuthenticated: false, error: 'Session check failed' })
-      throw e
-    }
-  },
-}))
+  )
+)
 
 export default useAuthStore
