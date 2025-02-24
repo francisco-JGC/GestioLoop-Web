@@ -4,6 +4,7 @@
       "error-login": {
         "title": "Request error",
         "Login failed": "Please check your credentials.",
+        "Logout failed": "Logout Failed.",
         "Failed to refresh token": "Failed to refresh token",
         "Session check failed": "Session check failed",
         "bad request": "Bad Request"
