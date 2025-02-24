@@ -8,12 +8,24 @@ import {
 } from '@/infrastructure/api/hooks/authHook'
 import { HttpStatusCode } from 'axios'
 
+export enum UserRole {
+  SUPER_ADMIN = 4,
+  ADMIN = 3,
+  MANAGER = 2,
+  STAFF = 1,
+}
+
+export enum UserTypes {
+  EXTERNAL = 'external',
+  INTERNAL = 'internal',
+}
+
 export interface User {
   id: string
   email: string
   username: string
-  user_role: string
-  user_type: string
+  user_role: UserRole
+  user_type: UserTypes
   tenantId: string | null
 }
 
