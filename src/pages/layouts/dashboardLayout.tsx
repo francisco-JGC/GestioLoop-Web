@@ -28,12 +28,12 @@ export const DashboardLayout = ({ children }: IProps) => {
               <BreadcrumbList>
                 {
                   breadcrumbList?.map((item, index) => (
-                    <>
+                    <div key={index} className="flex items-center gap-4">
                       <BreadcrumbSeparator />
-                      <BreadcrumbItem key={index} className="hover:text-black capitalize">
+                      <BreadcrumbItem className="hover:text-black capitalize">
                         <Link to={item.path} >{item.label}</Link>
                       </BreadcrumbItem>
-                    </>
+                    </div>
                   ))
                 }
               </BreadcrumbList>
