@@ -1,15 +1,20 @@
 import { Branch } from "@/infrastructure/api/types/branch"
-// import useBranchesStore from "@/shared/store/branchesStore"
+import useBranchesStore from "@/shared/store/branchesStore"
 import { SubmitHandler, useForm } from "react-hook-form"
 import { useTranslation } from "react-i18next"
 import { Button } from "@heroui/button";
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label";
+import { configureBranch } from "@/infrastructure/api/hooks/branchesHook";
+import { HttpStatusCode } from "axios";
+import { toast } from "sonner";
+import { useState } from "react";
 
 export const CreateBranchForm = () => {
-  // const { branches, setBranches } = useBranchesStore();
+  const { branches, setBranches } = useBranchesStore();
   const { t } = useTranslation();
-  const { handleSubmit, register } = useForm<Branch>({
+  const [isLoading, setIsLoading] = useState(false)
+  const { handleSubmit, register, reset } = useForm<Branch>({
     mode: 'onChange',
     reValidateMode: 'onChange',
     defaultValues: {
@@ -18,7 +23,24 @@ export const CreateBranchForm = () => {
     },
   });
 
-  const onSubmit: SubmitHandler<Branch> = async () => {
+  const onSubmit: SubmitHandler<Branch> = async (data) => {
+    const response = await configureBranch(data)
+
+    if (response.statusCode === HttpStatusCode.Ok) {
+      setIsLoading(true)
+      toast.success(t('general.request-success'))
+
+      const newBranches = branches
+      newBranches.push(response.data)
+      setBranches(newBranches)
+      reset()
+    } else {
+      toast.error(t('general.request-error'), {
+        description: t('general.' + response.message)
+      })
+    }
+
+    setIsLoading(false)
   };
 
   return (
@@ -56,6 +78,7 @@ export const CreateBranchForm = () => {
             color="primary"
             variant="shadow"
             className="rounded-full"
+            isLoading={isLoading}
           >
             {t('general.create-branch')}
           </Button>
