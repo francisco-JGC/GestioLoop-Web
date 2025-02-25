@@ -8,6 +8,8 @@ import axios, {
   HttpStatusCode,
   InternalAxiosRequestConfig,
 } from 'axios'
+import { toast } from 'sonner'
+import i18n from '@/shared/utils/translations/i18n'
 
 export const apiGL: AxiosInstance = axios.create({
   baseURL: import.meta.env.VITE_BASE_GESTIOLOOOP_URL as string,
@@ -33,6 +35,12 @@ apiGL.interceptors.response.use(
   async (error: AxiosError) => {
     const originalRequest = error.config as AxiosRequestConfig & {
       _retry?: boolean
+    }
+
+    if (error.response?.status === HttpStatusCode.Forbidden) {
+      toast.error(i18n.t('general.forbidden'), {
+        description: i18n.t('general.forbidden-description'),
+      })
     }
 
     if (
