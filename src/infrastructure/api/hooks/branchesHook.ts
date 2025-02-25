@@ -13,3 +13,8 @@ export const configureBranch = async (
   const response = await apiGL.post('/branch/configure-branch', branch)
   return response.data
 }
+
+export const updateBranch = async (branch: Branch): Promise<HttpResponse> => {
+  const response = await apiGL.put('/branch/update-branch', branch)
+  return response.data
+}
