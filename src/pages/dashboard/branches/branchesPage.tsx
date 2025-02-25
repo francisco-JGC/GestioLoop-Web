@@ -1,10 +1,12 @@
 import { DashboardLayout } from "../../layouts/dashboardLayout"
+import { BranchesLists } from "./components/branches-lists"
 
 export const BranchesPage = () => {
   return (
     <DashboardLayout>
       <div>
-        <h1>Branches page wdqwd</h1>
+
+        <BranchesLists />
       </div>
     </DashboardLayout>
   )
