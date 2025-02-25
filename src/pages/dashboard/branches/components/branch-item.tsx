@@ -3,7 +3,8 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { CalendarIcon, MapPinIcon, Settings, StoreIcon } from "lucide-react"
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { BranchActions } from "./branch-actions";
+import { DropdownMenu, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 interface IProps {
   branch: Branch
@@ -14,8 +15,8 @@ export const BranchItem = ({ branch }: IProps) => {
 
   return (
     <motion.div
-      whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(0,0,0,0.1)" }}
-      transition={{ type: "spring", stiffness: 200, damping: 10 }}
+      whileHover={{ scale: 1.02, boxShadow: "0px 10px 20px rgba(0,0,0,0.1)" }}
+      transition={{ stiffness: 150, damping: 10 }}
       className="w-full max-w-md"
     >
       <Card className="h-[220px] shadow-md rounded-xl">
@@ -39,12 +40,12 @@ export const BranchItem = ({ branch }: IProps) => {
               whileHover={{ rotate: 90, scale: 1.1 }}
               transition={{ duration: 0.3 }}
             >
-              <Popover>
-                <PopoverTrigger>
+              <DropdownMenu>
+                <DropdownMenuTrigger >
                   <Settings className="w-6 h-6 cursor-pointer text-gray-600" />
-                </PopoverTrigger>
-                <PopoverContent></PopoverContent>
-              </Popover>
+                </DropdownMenuTrigger >
+                <BranchActions branch={branch} />
+              </DropdownMenu>
             </motion.div>
           </div>
         </CardContent>
