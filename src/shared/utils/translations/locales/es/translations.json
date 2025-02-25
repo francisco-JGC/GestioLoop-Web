@@ -27,7 +27,16 @@
     "Tenant not found": "Tenant no encontrado",
     "request-error": "Error en la solicitud",
     "request-success": "Solicitud exitosa",
-    "There is already a branch with this name": "Ya existe una sucursal con este nombre"
+    "There is already a branch with this name": "Ya existe una sucursal con este nombre",
+    "hire-service": "Contratar servicio",
+    "manage-users": "Gestionar usuarios",
+    "update": "Actualizar",
+    "delete": "Eliminar",
+    "update-branch": "Actualizar sucursal",
+    "update-branch-description": "Ingresa el nuevo nombre y dirección para actualizar la sucursal.",
+    "Branch not found": "Sucursal no encontrada",
+    "forbidden": "Acceso denegado",
+    "forbidden-description": "No tienes permisos para este recurso."
   },
   "page_404": {
     "title": "Error 404",
@@ -77,5 +86,12 @@
       "External users": "Usuarios externos",
       "Services": "Servicios"
     }
+  },
+  "branches": {
+    "title-page": "Gestión de Sucursale",
+    "description-page": "Administra y supervisa todas tus sucursales en un solo lugar.",
+    "total-branches": "Total de sucursales",
+    "active-branches": "Sucursales activas",
+    "inactive-branches": "Sucursales inactivas"
   }
 }
