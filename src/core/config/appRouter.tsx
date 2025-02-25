@@ -4,6 +4,7 @@ import { Page404 } from '../../pages/error404/404'
 import { SigninPage } from '@/pages/login/signIn/SignInPage'
 import { RegisterPage } from '@/pages/login/register/RegisterPage'
 import { DashboardPage } from '@/pages/dashboard/dashboardPage'
+import { BranchesPage } from '@/pages/dashboard/branches/dashboardPage'
 
 const AppRouter = createBrowserRouter([
   {
@@ -20,7 +21,13 @@ const AppRouter = createBrowserRouter([
   },
   {
     path: 'dashboard',
-    element: <DashboardPage />
+    element: <DashboardPage />,
+    children: [
+      {
+        path: 'branches',
+        element: <BranchesPage />
+      }
+    ]
   },
   {
     path: '*',
