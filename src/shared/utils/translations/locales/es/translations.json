@@ -18,7 +18,16 @@
     }
   },
   "general": {
-    "created": "Creado"
+    "created": "Creado",
+    "create-branch": "Crear Sucursal",
+    "click-to-create-a-new-branch": "Haz clic para crear una nueva sucursal.",
+    "create-branch-description": "Ingresa el nombre y la dirección para crear una nueva sucursal.",
+    "name": "Nombre",
+    "address": "Dirección",
+    "Tenant not found": "Tenant no encontrado",
+    "request-error": "Error en la solicitud",
+    "request-success": "Solicitud exitosa",
+    "There is already a branch with this name": "Ya existe una sucursal con este nombre"
   },
   "page_404": {
     "title": "Error 404",
