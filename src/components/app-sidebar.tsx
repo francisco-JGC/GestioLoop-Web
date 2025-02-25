@@ -10,6 +10,9 @@ import {
   Send,
   Settings2,
   SquareTerminal,
+  Star,
+  Store,
+  UsersRound,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
@@ -108,14 +111,19 @@ const data = {
   ],
   navSecondary: [
     {
-      title: "Support",
-      url: "#",
-      icon: LifeBuoy,
+      title: "sidebar.navSecondary.Branches",
+      url: "/dashbaord/branches",
+      icon: Store,
     },
     {
-      title: "Feedback",
-      url: "#",
-      icon: Send,
+      title: "sidebar.navSecondary.External users",
+      url: "/dashbaord/external-users",
+      icon: UsersRound,
+    },
+    {
+      title: "sidebar.navSecondary.Services",
+      url: "/dashbaord/services",
+      icon: Star,
     },
   ],
   projects: [
