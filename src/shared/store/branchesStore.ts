@@ -7,6 +7,7 @@ interface BranchState {
   selectedBranch: Branch | null
   setBranches: (branches: Branch[]) => void
   setSelectedBranch: (branchId: string) => void
+  updateBranch: (branch: Branch) => void
 }
 
 const useBranchesStore = create<BranchState>()(
@@ -20,6 +21,12 @@ const useBranchesStore = create<BranchState>()(
           selectedBranch:
             state.branches.find((branch) => branch.id === branchId) ||
             state.selectedBranch,
+        })),
+      updateBranch: (updatedBranch) =>
+        set((state) => ({
+          branches: state.branches.map((branch) =>
+            branch.id === updatedBranch.id ? updatedBranch : branch
+          ),
         })),
     }),
     {
