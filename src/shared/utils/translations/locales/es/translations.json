@@ -17,6 +17,9 @@
       }
     }
   },
+  "general": {
+    "created": "Creado"
+  },
   "page_404": {
     "title": "Error 404",
     "subject": "Hemos perdido esta página",
@@ -58,5 +61,12 @@
     "signin": "Iniciar Sesión",
     "register": "Registrarse",
     "comment": "primer paso hacia el éxito"
+  },
+  "sidebar": {
+    "navSecondary": {
+      "Branches": "Sucursales",
+      "External users": "Usuarios externos",
+      "Services": "Servicios"
+    }
   }
 }

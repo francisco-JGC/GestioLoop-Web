@@ -17,6 +17,9 @@
       }
     }
   },
+  "general": {
+    "created": "Created"
+  },
   "page_404": {
     "title": "404 error",
     "subject": "We lost this page",
