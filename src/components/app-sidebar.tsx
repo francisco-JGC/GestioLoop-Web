@@ -110,17 +110,17 @@ const data = {
   navSecondary: [
     {
       title: "sidebar.navSecondary.Branches",
-      url: "/dashbaord/branches",
+      url: "/dashboard/branches",
       icon: Store,
     },
     {
       title: "sidebar.navSecondary.External users",
-      url: "/dashbaord/external-users",
+      url: "/dashboard/external-users",
       icon: UsersRound,
     },
     {
       title: "sidebar.navSecondary.Services",
-      url: "/dashbaord/services",
+      url: "/dashboard/services",
       icon: Star,
     },
   ],
