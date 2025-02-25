@@ -58,5 +58,12 @@
     "signin": "Log in",
     "register": "Register",
     "comment": "first step to success"
+  },
+  "sidebar": {
+    "navSecondary": {
+      "Branches": "Branches",
+      "External users": "External users",
+      "Services": "Services"
+    }
   }
 }

@@ -9,6 +9,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import { Link } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 
 export function NavSecondary({
   items,
@@ -20,6 +21,8 @@ export function NavSecondary({
     icon: LucideIcon
   }[]
 } & React.ComponentPropsWithoutRef<typeof SidebarGroup>) {
+  const { t } = useTranslation()
+
   return (
     <SidebarGroup {...props}>
       <SidebarGroupContent>
@@ -29,7 +32,7 @@ export function NavSecondary({
               <SidebarMenuButton asChild size="sm">
                 <Link to={item.url}>
                   <item.icon />
-                  <span>{item.title}</span>
+                  <span>{t(item.title)}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
