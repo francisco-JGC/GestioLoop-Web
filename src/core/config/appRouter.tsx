@@ -4,7 +4,8 @@ import { Page404 } from '../../pages/error404/404'
 import { SigninPage } from '@/pages/login/signIn/SignInPage'
 import { RegisterPage } from '@/pages/login/register/RegisterPage'
 import { DashboardPage } from '@/pages/dashboard/dashboardPage'
-import { BranchesPage } from '@/pages/dashboard/branches/dashboardPage'
+import { BranchesPage } from '@/pages/dashboard/branches/branchesPage'
+import AuthGuard from '@/pages/dashboard/auth-guard'
 
 const AppRouter = createBrowserRouter([
   {
@@ -21,8 +22,12 @@ const AppRouter = createBrowserRouter([
   },
   {
     path: 'dashboard',
-    element: <DashboardPage />,
+    element: <AuthGuard />,
     children: [
+      {
+        path: '',
+        element: <DashboardPage />
+      },
       {
         path: 'branches',
         element: <BranchesPage />
