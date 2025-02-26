@@ -115,7 +115,7 @@ const data = {
     },
     {
       title: "sidebar.navSecondary.External users",
-      url: "/dashboard/external-users",
+      url: "/dashboard/users-management",
       icon: UsersRound,
     },
     {

@@ -6,6 +6,7 @@ import { RegisterPage } from '@/pages/login/register/RegisterPage'
 import { DashboardPage } from '@/pages/dashboard/dashboardPage'
 import { BranchesPage } from '@/pages/dashboard/branches/branchesPage'
 import AuthGuard from '@/pages/dashboard/auth-guard'
+import { UsersManagementPage } from '@/pages/dashboard/usersManagement/usersManagementPage'
 
 const AppRouter = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const AppRouter = createBrowserRouter([
       {
         path: 'branches',
         element: <BranchesPage />
+      },
+      {
+        path: 'users-management',
+        element: <UsersManagementPage />
       }
     ]
   },
