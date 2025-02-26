@@ -1,6 +1,6 @@
 import { Branch } from "@/infrastructure/api/types/branch"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { CalendarIcon, MapPinIcon, Settings, StoreIcon } from "lucide-react"
+import { Ban, CalendarIcon, MapPinIcon, Settings, StoreIcon } from "lucide-react"
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { BranchActions } from "./branch-actions";
@@ -21,7 +21,9 @@ export const BranchItem = ({ branch }: IProps) => {
     >
       <Card className="h-[220px] shadow-md rounded-xl">
         <CardHeader className="flex flex-col items-center">
-          <StoreIcon className="w-8 h-8 text-primary" />
+          {
+            branch.status ? <StoreIcon className="w-8 h-8 text-primary" /> : <Ban className="w-8 h-8 text-red-400" />
+          }
           <CardTitle className="text-lg font-semibold text-center">
             {branch.name}
           </CardTitle>
