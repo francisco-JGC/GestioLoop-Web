@@ -36,7 +36,10 @@
     "update-branch-description": "Ingresa el nuevo nombre y dirección para actualizar la sucursal.",
     "Branch not found": "Sucursal no encontrada",
     "forbidden": "Acceso denegado",
-    "forbidden-description": "No tienes permisos para este recurso."
+    "forbidden-description": "No tienes permisos para este recurso.",
+    "cancel": "Cancelar",
+    "continue": "Continuar",
+    "loading-toast": "Porfavor espere..."
   },
   "page_404": {
     "title": "Error 404",
@@ -92,6 +95,12 @@
     "description-page": "Administra y supervisa todas tus sucursales en un solo lugar.",
     "total-branches": "Total de sucursales",
     "active-branches": "Sucursales activas",
-    "inactive-branches": "Sucursales inactivas"
+    "inactive-branches": "Sucursales inactivas",
+    "disable-branch": "Deshabilitar sucursal",
+    "enable-branch": "Habilitar sucursal",
+    "disable-branch-title": "Tómate un descanso",
+    "enable-branch-title": "Vuelve al trabajo",
+    "disable-branch-description": "Esta opción evitará que se realice cualquier acción dentro de esta sucursal.",
+    "enable-branch-description": "Vuelve a habilitar todos los procesos para esta sucursal."
   }
 }
