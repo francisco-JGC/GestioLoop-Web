@@ -1,13 +1,16 @@
 import { Input } from "@/components/ui/input"
 import { Button } from "@heroui/button"
 import { Search, Plus } from "lucide-react"
+import useExternalUserStore from "@/shared/store/externalUserStore"
 
 export const HeaderList = () => {
+  const { users } = useExternalUserStore()
+
   return (
     <div className="flex items-center justify-between">
       <div>
         <span className="text-lg font-semibold text-gray-800">
-          All users: <span className="text-gray-500">30</span>
+          All users: <span className="text-gray-500">{users.length}</span>
         </span>
       </div>
       <div className="flex gap-4 items-center">
