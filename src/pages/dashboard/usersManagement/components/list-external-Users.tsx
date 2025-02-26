@@ -50,7 +50,7 @@ export const ListExternalUsers = ({ t }: IProps) => {
 
   return (
     <div className="flex flex-col gap-6">
-      <HeaderList />
+      <HeaderList t={t} />
       <Table>
         <TableHeader>
           <TableRow>

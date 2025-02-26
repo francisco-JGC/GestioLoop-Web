@@ -112,6 +112,9 @@
   },
   "um": {
     "title-page": "Users Management",
-    "description-page": "Manage your team members and their account permissions here."
+    "description-page": "Manage your team members and their account permissions here.",
+    "all-users": "All users",
+    "create-user": "Create user",
+    "search-placeholder-user": "Username..."
   }
 }

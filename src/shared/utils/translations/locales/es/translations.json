@@ -112,6 +112,9 @@
   },
   "um": {
     "title-page": "Administrar Usuarios",
-    "description-page": "Administre los miembros de su equipo y los permisos de sus cuentas aquí."
+    "description-page": "Administre los miembros de su equipo y los permisos de sus cuentas aquí.",
+    "all-users": "Todos los usuarios",
+    "create-user": "Crear usuario",
+    "search-placeholder-user": "Nombre de usuario..."
   }
 }
