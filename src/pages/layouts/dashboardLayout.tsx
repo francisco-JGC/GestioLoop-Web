@@ -31,7 +31,7 @@ export const DashboardLayout = ({ children }: IProps) => {
                     <div key={index} className="flex items-center gap-4">
                       <BreadcrumbSeparator />
                       <BreadcrumbItem className="hover:text-black capitalize">
-                        <Link to={item.path} >{item.label}</Link>
+                        <Link to={item.path}>{item.label.replace('-', ' ')}</Link>
                       </BreadcrumbItem>
                     </div>
                   ))
