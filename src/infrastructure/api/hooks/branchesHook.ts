@@ -18,3 +18,8 @@ export const updateBranch = async (branch: Branch): Promise<HttpResponse> => {
   const response = await apiGL.put('/branch/update-branch', branch)
   return response.data
 }
+
+export const updateStatusBranch = async (id: string): Promise<HttpResponse> => {
+  const response = await apiGL.patch(`/branch/${id}/status`)
+  return response.data
+}
