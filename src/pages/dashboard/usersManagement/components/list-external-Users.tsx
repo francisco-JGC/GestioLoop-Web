@@ -13,7 +13,7 @@ interface IProps {
 }
 
 export const ListExternalUsers = ({ t }: IProps) => {
-  const { users, page, hasMore, setUsers } = useExternalUserStore()
+  const { users, page, hasMore, setUsers, setTotalUsers } = useExternalUserStore()
   const { ref, inView } = useInView()
   const [isFetching, setIsFetching] = useState(false)
   const firstLoad = useRef(true)
@@ -37,9 +37,10 @@ export const ListExternalUsers = ({ t }: IProps) => {
     setIsFetching(true)
     try {
       const response = await getPaginatedUsers(page, 10)
-      const { external_users, current_page, total_pages } = response.data
+      const { external_users, current_page, total_pages, total_users } = response.data
 
       setUsers([...users, ...external_users], current_page + 1, current_page < total_pages)
+      setTotalUsers(total_users)
     } catch (error) {
       console.error("Error fetching users:", error)
     } finally {

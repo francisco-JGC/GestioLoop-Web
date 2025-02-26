@@ -5,8 +5,10 @@ import type { ExternalUser } from '@/infrastructure/api/types/user'
 interface ExternalUserState {
   users: ExternalUser[]
   page: number
+  total_users: number
   hasMore: boolean
   setUsers: (users: ExternalUser[], page: number, hasMore: boolean) => void
+  setTotalUsers: (total_users: number) => void
   setUser: (user: ExternalUser) => void
   updateUser: (user: Partial<ExternalUser> & { id: string }) => void
   clearUsers: () => void
@@ -17,6 +19,7 @@ const useExternalUserStore = create<ExternalUserState>()(
     (set) => ({
       users: [],
       page: 1,
+      total_users: 0,
       hasMore: true,
 
       setUsers: (newUsers, page, hasMore) => {
@@ -32,6 +35,8 @@ const useExternalUserStore = create<ExternalUserState>()(
           hasMore,
         }))
       },
+
+      setTotalUsers: (total_users) => set({ total_users }),
 
       setUser: (user) => {
         set((state) => {
@@ -59,7 +64,7 @@ const useExternalUserStore = create<ExternalUserState>()(
       },
 
       clearUsers: () => {
-        set({ users: [], page: 1, hasMore: true })
+        set({ users: [], page: 1, hasMore: true, total_users: 0 })
       },
     }),
     { name: 'external-users-storage' }
