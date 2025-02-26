@@ -39,7 +39,14 @@
     "forbidden-description": "You do not have permissions for this resource.",
     "cancel": "Cancel",
     "continue": "Continue",
-    "loading-toast": "Please wait..."
+    "loading-toast": "Please wait...",
+    "username": "Username",
+    "email": "Email",
+    "phone_number": "Phone number",
+    "branch": "Branch",
+    "role": "Role",
+    "actions": "Actions",
+    "action": "Action"
   },
   "page_404": {
     "title": "404 error",
@@ -86,7 +93,7 @@
   "sidebar": {
     "navSecondary": {
       "Branches": "Branches",
-      "External users": "External users",
+      "External users": "Users Management",
       "Services": "Services"
     }
   },
@@ -102,5 +109,9 @@
     "enable-branch-title": "Go back to work",
     "disable-branch-description": "This option will prevent any action from being carried out within this branch.",
     "enable-branch-description": "Re-enable all processes for this branch"
+  },
+  "um": {
+    "title-page": "Users Management",
+    "description-page": "Manage your team members and their account permissions here."
   }
 }

@@ -39,7 +39,14 @@
     "forbidden-description": "No tienes permisos para este recurso.",
     "cancel": "Cancelar",
     "continue": "Continuar",
-    "loading-toast": "Porfavor espere..."
+    "loading-toast": "Porfavor espere...",
+    "username": "Nombre de usuario",
+    "email": "Correo",
+    "phone_number": "Teléfono",
+    "branch": "Sucursal",
+    "role": "Rol",
+    "actions": "Acciones",
+    "action": "Acción"
   },
   "page_404": {
     "title": "Error 404",
@@ -86,12 +93,12 @@
   "sidebar": {
     "navSecondary": {
       "Branches": "Sucursales",
-      "External users": "Usuarios externos",
+      "External users": "Administrar usuarios",
       "Services": "Servicios"
     }
   },
   "branches": {
-    "title-page": "Gestión de Sucursale",
+    "title-page": "Administrar Sucursale",
     "description-page": "Administra y supervisa todas tus sucursales en un solo lugar.",
     "total-branches": "Total de sucursales",
     "active-branches": "Sucursales activas",
@@ -102,5 +109,9 @@
     "enable-branch-title": "Vuelve al trabajo",
     "disable-branch-description": "Esta opción evitará que se realice cualquier acción dentro de esta sucursal.",
     "enable-branch-description": "Vuelve a habilitar todos los procesos para esta sucursal."
+  },
+  "um": {
+    "title-page": "Administrar Usuarios",
+    "description-page": "Administre los miembros de su equipo y los permisos de sus cuentas aquí."
   }
 }
