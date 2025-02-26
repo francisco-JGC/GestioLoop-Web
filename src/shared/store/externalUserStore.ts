@@ -12,7 +12,7 @@ interface ExternalUserState {
   clearUsers: () => void
 }
 
-const externalUserStore = create<ExternalUserState>()(
+const useExternalUserStore = create<ExternalUserState>()(
   persist(
     (set) => ({
       users: [],
@@ -66,4 +66,4 @@ const externalUserStore = create<ExternalUserState>()(
   )
 )
 
-export default externalUserStore
+export default useExternalUserStore

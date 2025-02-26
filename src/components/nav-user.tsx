@@ -29,14 +29,17 @@ import {
 } from "@/components/ui/sidebar"
 import useAuthStore from "@/shared/store/authStore"
 import useBranchesStore from "@/shared/store/branchesStore"
+import useExternalUserStore from "@/shared/store/externalUserStore"
 
 export function NavUser() {
   const { isMobile } = useSidebar()
   const { user, logout } = useAuthStore()
   const { setBranches } = useBranchesStore()
+  const { clearUsers } = useExternalUserStore()
 
   const handleLogout = () => {
     setBranches([])
+    clearUsers()
     logout()
   }
 

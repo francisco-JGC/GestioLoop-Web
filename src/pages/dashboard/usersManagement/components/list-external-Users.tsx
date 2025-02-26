@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState, useRef } from "react"
 import { useInView } from "react-intersection-observer"
-import externalUserStore from "@/shared/store/externalUserStore"
+import useExternalUserStore from "@/shared/store/externalUserStore"
 import { getPaginatedUsers } from "@/infrastructure/api/hooks/externalUsersHook"
 import { Table, TableBody, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { HeaderList } from "./header-list"
@@ -13,7 +13,7 @@ interface IProps {
 }
 
 export const ListExternalUsers = ({ t }: IProps) => {
-  const { users, page, hasMore, setUsers } = externalUserStore()
+  const { users, page, hasMore, setUsers } = useExternalUserStore()
   const { ref, inView } = useInView()
   const [isFetching, setIsFetching] = useState(false)
   const firstLoad = useRef(true)
