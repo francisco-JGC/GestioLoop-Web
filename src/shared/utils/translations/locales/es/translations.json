@@ -46,7 +46,9 @@
     "branch": "Sucursal",
     "role": "Rol",
     "actions": "Acciones",
-    "action": "Acción"
+    "action": "Acción",
+    "password": "Contraseña",
+    "real_name": "Nombre real"
   },
   "page_404": {
     "title": "Error 404",

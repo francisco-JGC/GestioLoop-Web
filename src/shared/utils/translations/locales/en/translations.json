@@ -46,7 +46,9 @@
     "branch": "Branch",
     "role": "Role",
     "actions": "Actions",
-    "action": "Action"
+    "action": "Action",
+    "password": "Password",
+    "real_name": "Real Name"
   },
   "page_404": {
     "title": "404 error",
