@@ -36,7 +36,7 @@
     "update-branch-description": "Enter the new name and address to update the branch.",
     "Branch not found": "Branch not found",
     "forbidden": "Access denied",
-    "forbidden-description": "You do not have permissions for this resource.",
+    "forbidden-description": "You don't have permissions for this resource.",
     "cancel": "Cancel",
     "continue": "Continue",
     "loading-toast": "Please wait...",
