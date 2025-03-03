@@ -55,7 +55,8 @@ export const ListExternalUsers = ({ t }: IProps) => {
         <TableHeader>
           <TableRow>
             <TableHead></TableHead>
-            <TableHead>{t('general.username')}</TableHead>
+            <TableHead>{t('general.real_name')}</TableHead>
+            {/* <TableHead>{t('general.username')}</TableHead> */}
             <TableHead>{t('general.email')}</TableHead>
             <TableHead>{t('general.phone_number')}</TableHead>
             <TableHead>{t('general.branch')}</TableHead>
