@@ -7,7 +7,7 @@ interface IProps {
 }
 
 export const RenderAvatar = ({ image_url, chart = 'A', size = 13 }: IProps) => {
-  const styles = `rounded-full w-${size} h-${size} border`
+  const styles = `rounded-full w-${size} h-${size} border border-[#eeeeee]`
   return (
     <div>
       {
@@ -20,7 +20,7 @@ export const RenderAvatar = ({ image_url, chart = 'A', size = 13 }: IProps) => {
             className={`${styles} object-cover`}
           />
         ) : (
-          <div className={`${styles}} bg-gray-50 flex items-center justify-center font-semibold text-gray-700 uppercase`}>
+          <div className={`${styles} bg-gray-50 flex items-center justify-center font-semibold text-gray-700 uppercase`}>
             {chart}
           </div>
         )
