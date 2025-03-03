@@ -30,6 +30,7 @@ import {
 import useAuthStore from "@/shared/store/authStore"
 import useBranchesStore from "@/shared/store/branchesStore"
 import useExternalUserStore from "@/shared/store/externalUserStore"
+import { RenderAvatar } from "@/shared/components/renderAvatar"
 
 export function NavUser() {
   const { isMobile } = useSidebar()
@@ -52,10 +53,9 @@ export function NavUser() {
               size="lg"
               className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
             >
-              <Avatar className="h-8 w-8 rounded-lg">
-                <AvatarImage src={''} alt={user?.username} />
-                <AvatarFallback className="rounded-lg">CN</AvatarFallback>
-              </Avatar>
+              <div className="w-10 h-10">
+                <RenderAvatar chart={user?.username.charAt(0)} size={10} />
+              </div>
               <div className="grid flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-semibold">{user?.username}</span>
                 <span className="truncate text-xs">{user?.email}</span>
@@ -71,10 +71,9 @@ export function NavUser() {
           >
             <DropdownMenuLabel className="p-0 font-normal">
               <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
-                <Avatar className="h-8 w-8 rounded-lg">
-                  <AvatarImage src={''} alt={user?.username} />
-                  <AvatarFallback className="rounded-lg">CN</AvatarFallback>
-                </Avatar>
+                <div className="w-10 h-10">
+                  <RenderAvatar chart={user?.username.charAt(0)} size={10} />
+                </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-semibold">{user?.username}</span>
                   <span className="truncate text-xs">{user?.email}</span>
