@@ -6,7 +6,7 @@ export interface UserBase {
   image_url: string
   username: string
   phone_number: string
-  password_hash: string
+  password: string
   email: string
   user_role: UserRole
   user_type: UserTypes.EXTERNAL
@@ -15,5 +15,6 @@ export interface UserBase {
 }
 
 export interface ExternalUser extends UserBase {
+  real_name: string
   branch?: Branch
 }
