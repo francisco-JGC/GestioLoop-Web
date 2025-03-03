@@ -1,5 +1,6 @@
 import { apiGL } from '../../../core/config/axiosClient'
 import { HttpResponse } from '../types/httpResponse'
+import { ExternalUser } from '../types/user'
 
 export const getPaginatedUsers = async (
   page: number,
@@ -11,5 +12,12 @@ export const getPaginatedUsers = async (
       limit,
     },
   })
+  return response.data
+}
+
+export const createExternalUser = async (
+  user: ExternalUser
+): Promise<HttpResponse> => {
+  const response = await apiGL.post('/external-users/create', user)
   return response.data
 }
