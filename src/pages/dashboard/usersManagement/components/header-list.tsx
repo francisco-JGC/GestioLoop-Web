@@ -3,6 +3,8 @@ import { Button } from "@heroui/button"
 import { Search, Plus } from "lucide-react"
 import useExternalUserStore from "@/shared/store/externalUserStore"
 import { TFunction } from "i18next"
+import { DialogTrigger, Dialog, DialogContent } from "@/components/ui/dialog"
+import { CreateUserForm } from "./create-user-form"
 
 interface IProps {
   t: TFunction
@@ -24,10 +26,17 @@ export const HeaderList = ({ t }: IProps) => {
           <Input className="rounded-full shadow-none px-12" placeholder={t('um.search-placeholder-user')} />
         </div>
         <div>
-          <Button variant="shadow" className="bg-primary text-white rounded-full">
-            <Plus className="w-5 h-5" />
-            {t('um.create-user')}
-          </Button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="shadow" className="bg-primary text-white rounded-full">
+                <Plus className="w-5 h-5" />
+                {t('um.create-user')}
+              </Button>
+            </DialogTrigger>
+            <DialogContent>
+              <CreateUserForm />
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </div>
