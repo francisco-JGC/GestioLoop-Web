@@ -51,6 +51,7 @@ const useExternalUserStore = create<ExternalUserState>()(
             users: existingUser
               ? state.users.map((u) => (u.id === user.id ? user : u))
               : [...state.users, user],
+            total_users: state.total_users + 1,
           }
         })
       },
