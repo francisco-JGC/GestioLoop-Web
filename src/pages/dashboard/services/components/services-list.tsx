@@ -16,7 +16,7 @@ export const ServicesList = ({ t }: IProps) => {
   }, [])
 
   return (
-    <div className="grid grid-cols-2 gap-10">
+    <div className="grid grid-cols-3 gap-10">
       {isLoading ? (
         <p>Cargando servicios...</p>
       ) : (
