@@ -3,11 +3,6 @@ import {
 } from "lucide-react"
 
 import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar"
-import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
@@ -43,7 +38,6 @@ export function NavBranch() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [getBranches, setBranches, setSelectedBranch]);
 
-
   return (
     <SidebarMenu>
       <SidebarMenuItem>
@@ -53,10 +47,6 @@ export function NavBranch() {
               size="lg"
               className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground bg-gray-100"
             >
-              <Avatar className="h-8 w-8 rounded-lg">
-                <AvatarImage src={''} alt="dqwd" />
-                <AvatarFallback className="rounded-lg uppercase"><i className='bx bxs-briefcase-alt-2' ></i></AvatarFallback>
-              </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight max-w-60" title={selectedBranch?.name}>
                 <span className="truncate font-semibold">{selectedBranch?.name}</span>
                 <span className="truncate text-xs">{selectedBranch?.address}</span>
