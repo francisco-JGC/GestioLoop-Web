@@ -118,5 +118,175 @@
     "all-users": "Todos los usuarios",
     "create-user": "Crear usuario",
     "search-placeholder-user": "Nombre de usuario..."
+  },
+  "services": {
+    "title-page": "Nuestros Servicios",
+    "description-page": "Descubre las herramientas que harán tu negocio más eficiente. Desde la automatización hasta la gestión avanzada, tenemos lo que necesitas.",
+
+    "Inventory Management": {
+      "name": "Gestión de Inventarios",
+      "description": "Optimiza tu stock, evita pérdidas y toma decisiones inteligentes con nuestra solución avanzada de gestión de inventarios.",
+      "feature_1": {
+        "title": "Gestión Completa de Productos",
+        "items": {
+          "1": "Registro de productos con código SKU, código de barras y código QR.",
+          "2": "Clasificación por categorías y subcategorías para una mejor organización.",
+          "3": "Soporte para múltiples proveedores por producto.",
+          "4": "Precios y costos dinámicos con cálculo automático de márgenes.",
+          "5": "Unidades de medida personalizadas (Kg, Litros, Unidades, etc.).",
+          "6": "Galería de imágenes y hojas técnicas detalladas."
+        }
+      },
+      "feature_2": {
+        "title": "Control Inteligente de Stock",
+        "items": {
+          "1": "Actualizaciones en tiempo real de entradas y salidas de stock.",
+          "2": "Alertas automáticas por stock bajo, exceso de stock o caducidades.",
+          "3": "Gestión de múltiples almacenes con control individual.",
+          "4": "Registros detallados de ajustes de inventario (merma, robo, devoluciones).",
+          "5": "Historial de movimientos con usuario, fecha y razón del cambio.",
+          "6": "Códigos de stock únicos para trazabilidad precisa."
+        }
+      },
+      "feature_3": {
+        "title": "Optimización de Costos y Precios",
+        "items": {
+          "1": "Cálculo automático del costo promedio y rentabilidad.",
+          "2": "Listas de precios personalizadas.",
+          "3": "Descuentos por volumen o promociones con duración programada.",
+          "4": "Aplicación de impuestos personalizados (IVA).",
+          "5": "Historial de cambios de precios con control de usuario."
+        }
+      },
+      "feature_4": {
+        "title": "Informes y Análisis Avanzados",
+        "items": {
+          "1": "Informes en tiempo real sobre stock, costos y ventas.",
+          "2": "Productos más vendidos y artículos de bajo giro para optimizar compras.",
+          "3": "Análisis de rentabilidad para maximizar márgenes.",
+          "4": "Historial de compras y ventas por producto y proveedor.",
+          "5": "Exportación de datos en Excel, PDF y CSV."
+        }
+      },
+      "feature_5": {
+        "title": "Seguridad y Control de Accesos",
+        "items": {
+          "1": "Perfiles de usuario personalizables (Administrador, Almacén, Ventas, Auditor).",
+          "2": "Registro de auditoría con historial de modificaciones.",
+          "3": "Bloqueo de productos y almacenes para evitar errores."
+        }
+      }
+    },
+    "WhatsApp Bot Service": {
+      "name": "Servicio de Bot de WhatsApp",
+      "description": "Nuestro Servicio de Bot de WhatsApp permite a tu negocio interactuar automáticamente con los clientes a través de WhatsApp. Puedes configurar respuestas predefinidas para preguntas frecuentes o integrar inteligencia artificial para respuestas dinámicas y más personalizadas. Con nuestra solución, optimizarás el servicio al cliente, reducirás los tiempos de espera y ofrecerás soporte 24/7.",
+      "feature_1": {
+        "title": "Respuestas Predefinidas Personalizables",
+        "items": {
+          "1": "Crea respuestas automáticas para preguntas comunes (horarios de atención, ubicaciones, productos, servicios, etc.).",
+          "2": "Respuestas instantáneas, incluso fuera del horario laboral, para soporte continuo.",
+          "3": "Personaliza el flujo de interacción con menús rápidos o botones."
+        }
+      },
+      "feature_2": {
+        "title": "Integración con Inteligencia Artificial",
+        "items": {
+          "1": "Conecta tu bot con IA para proporcionar respuestas más dinámicas adaptadas al contexto del usuario.",
+          "2": "Aprende de cada interacción para mejorar las respuestas con el tiempo."
+        }
+      },
+      "feature_3": {
+        "title": "Seguridad y Privacidad",
+        "items": {
+          "1": "Cumplimiento con las regulaciones de protección de datos (GDPR, Leyes de Privacidad de Datos).",
+          "2": "Control total sobre los permisos y el acceso para los usuarios que interactúan con el bot."
+        }
+      }
+    },
+    "Online Reservation Service": {
+      "name": "Servicio de Reserva Online",
+      "description": "Nuestro servicio de reserva online te permite gestionar la programación de citas, reservas de productos o servicios, todo de manera rápida y eficiente. Los clientes pueden realizar sus reservas en línea en cualquier momento del día, reduciendo la carga operativa de tu equipo y mejorando la experiencia del usuario. Ya sea para restaurantes, spas, clínicas o cualquier tipo de negocio, nuestra plataforma se adapta a tus necesidades.",
+      "feature_1": {
+        "title": "Reservas 24/7",
+        "items": {
+          "1": "Los clientes pueden realizar reservas en cualquier momento desde el sitio web o la aplicación móvil, sin intervención manual.",
+          "2": "Reduce errores y malentendidos al permitir que los clientes seleccionen horarios disponibles y reciban confirmación instantánea."
+        }
+      },
+      "feature_2": {
+        "title": "Gestión de Disponibilidad",
+        "items": {
+          "1": "Control total sobre fechas y horarios disponibles, con opciones para gestionar días de cierre, festivos o bloqueos especiales.",
+          "2": "Sincronización con tu calendario o sistema de gestión para evitar sobre-reservas."
+        }
+      },
+      "feature_3": {
+        "title": "Personalización de Reservas",
+        "items": {
+          "1": "Permite personalizar los campos que los clientes deben completar al hacer una reserva (nombre, número de personas, solicitudes especiales, etc.).",
+          "2": "Opción de añadir servicios adicionales a la reserva (como opciones de menú, servicios extra, descuentos, etc.)."
+        }
+      },
+      "feature_4": {
+        "title": "Notificaciones y Recordatorios",
+        "items": {
+          "1": "Notificaciones automáticas por correo electrónico o SMS para confirmar, recordar o modificar la reserva.",
+          "2": "Recordatorios personalizados para los clientes sobre su cita o reserva, reduciendo las ausencias."
+        }
+      },
+      "feature_5": {
+        "title": "Pagos Integrados",
+        "items": {
+          "1": "Opción de permitir pagos online al momento de la reserva (ideal para negocios que requieren un depósito o pago completo).",
+          "2": "Integración con plataformas de pago seguras y confiables como tarjetas de crédito, PayPal o pagos en efectivo al llegar."
+        }
+      },
+      "feature_6": {
+        "title": "Tipos de Reservas Múltiples",
+        "items": {
+          "1": "Soporte para diferentes tipos de reservas como citas, reservas grupales, eventos o recursos como habitaciones o mesas.",
+          "2": "Configuración flexible para adaptarse a diferentes necesidades (por ejemplo, número de personas, duración de la cita, etc.)."
+        }
+      },
+      "feature_7": {
+        "title": "Gestión de Cancelaciones y Modificaciones",
+        "items": {
+          "1": "Simplifica el proceso de cancelación o modificación directamente desde la plataforma, con reglas personalizables sobre tiempos de cancelación o cambios."
+        }
+      }
+    },
+    "Basic Invoice Generator": {
+      "name": "Generador de Facturas Básico",
+      "description": "Genera facturas profesionales sin esfuerzo con nuestra herramienta fácil de usar para la creación de facturas. Perfecto para freelancers, pequeñas empresas y cualquier persona que necesite una solución de facturación rápida y confiable.",
+      "feature_1": {
+        "title": "Creación de Facturas",
+        "items": {
+          "1": "Crea un cliente con nombre, dirección y correo electrónico.",
+          "2": "Añade una lista de productos o servicios con sus respectivas cantidades, precios y descuentos.",
+          "3": "Cálculo automático de totales, impuestos y descuentos.",
+          "4": "Generación automática de un número de factura único para cada factura."
+        }
+      },
+      "feature_2": {
+        "title": "Diseño de Factura Personalizable",
+        "items": {
+          "1": "Personaliza la factura con el logo de tu empresa y la información de contacto.",
+          "2": "Añade campos personalizados como términos y condiciones o notas adicionales."
+        }
+      },
+      "feature_3": {
+        "title": "Gestión de Impuestos",
+        "items": {
+          "1": "Soporta el cálculo de impuestos como IVA, impuestos locales, etc.",
+          "2": "Opción de mostrar precios con impuestos incluidos o desglosados."
+        }
+      },
+      "feature_4": {
+        "title": "Historial de Facturas",
+        "items": {
+          "1": "Accede al historial de todas las facturas generadas."
+        }
+      }
+    }
   }
 }

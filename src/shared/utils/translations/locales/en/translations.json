@@ -118,5 +118,175 @@
     "all-users": "All users",
     "create-user": "Create user",
     "search-placeholder-user": "Username..."
+  },
+  "services": {
+    "title-page": "Our Services",
+    "description-page": "Discover the tools that will make your business more efficient. From automation to advanced management, we have what you need.",
+
+    "Inventory Management": {
+      "name": "Inventory Management",
+      "description": "Optimize your stock, avoid losses, and make smart decisions with our advanced inventory management solution.",
+      "feature_1": {
+        "title": "Complete Product Management",
+        "items": {
+          "1": "Product registration with SKU code, barcode, and QR code.",
+          "2": "Classification by categories and subcategories for better organization.",
+          "3": "Support for multiple suppliers per product.",
+          "4": "Dynamic pricing and costs with automatic margin calculation.",
+          "5": "Custom measurement units (Kg, Liters, Units, etc.).",
+          "6": "Image gallery and detailed technical sheets."
+        }
+      },
+      "feature_2": {
+        "title": "Smart Stock Control",
+        "items": {
+          "1": "Real-time updates on stock entries and exits.",
+          "2": "Automatic alerts for low stock, overstock, or expirations.",
+          "3": "Management of multiple warehouses with individual control.",
+          "4": "Detailed inventory adjustment records (shrinkage, theft, returns).",
+          "5": "Movement history with user, date, and reason for the change.",
+          "6": "Unique stock codes for precise traceability."
+        }
+      },
+      "feature_3": {
+        "title": "Cost and Price Optimization",
+        "items": {
+          "1": "Automatic calculation of average cost and profitability.",
+          "2": "Custom price lists.",
+          "3": "Volume discounts or promotions with scheduled duration.",
+          "4": "Application of custom taxes (VAT).",
+          "5": "Price change history with user control."
+        }
+      },
+      "feature_4": {
+        "title": "Advanced Reporting and Analytics",
+        "items": {
+          "1": "Real-time reports on stock, costs, and sales.",
+          "2": "Best-selling products and low-turnover items to optimize purchases.",
+          "3": "Profitability analysis to maximize margins.",
+          "4": "Purchase and sales history by product and supplier.",
+          "5": "Data export in Excel, PDF, and CSV."
+        }
+      },
+      "feature_5": {
+        "title": "Security and Access Control",
+        "items": {
+          "1": "Customizable user profiles (Administrator, Warehouse, Sales, Auditor).",
+          "2": "Audit log with a history of modifications.",
+          "3": "Locking of products and warehouses to prevent errors."
+        }
+      }
+    },
+    "WhatsApp Bot Service": {
+      "name": "WhatsApp Bot Service",
+      "description": "Our WhatsApp Bot Service allows your business to interact with customers automatically through WhatsApp. You can set up predefined responses for frequently asked questions or integrate artificial intelligence for dynamic and more personalized responses. With our solution, you will optimize customer service, reduce wait times, and offer 24/7 support.",
+      "feature_1": {
+        "title": "Customizable Predefined Responses",
+        "items": {
+          "1": "Create automatic replies for common questions (business hours, locations, products, services, etc.).",
+          "2": "Instant responses, even outside business hours, for continuous support.",
+          "3": "Customize the interaction flow with quick menus or buttons."
+        }
+      },
+      "feature_2": {
+        "title": "Integration with Artificial Intelligence",
+        "items": {
+          "1": "Connect your bot with AI to provide more dynamic responses tailored to the user's context.",
+          "2": "Learn from each interaction to improve answers over time."
+        }
+      },
+      "feature_3": {
+        "title": "Security and Privacy",
+        "items": {
+          "1": "Compliance with data protection regulations (GDPR, Data Privacy Laws).",
+          "2": "Full control over permissions and access for users interacting with the bot."
+        }
+      }
+    },
+    "Online Reservation Service": {
+      "name": "Online Reservation Service",
+      "description": "Our online reservation service allows you to manage appointment scheduling, product or service bookings, all in a quick and efficient manner. Customers can make their reservations online at any time of the day, reducing your team's operational load and improving the user experience. Whether for restaurants, spas, clinics, or any type of business, our platform adapts to your needs.",
+      "feature_1": {
+        "title": "24/7 Reservations",
+        "items": {
+          "1": "Customers can make reservations anytime from the website or mobile app, without manual intervention.",
+          "2": "Reduces errors and misunderstandings by allowing customers to select available times and receive instant confirmation."
+        }
+      },
+      "feature_2": {
+        "title": "Availability Management",
+        "items": {
+          "1": "Full control over available dates and times, with options to manage closing days, holidays, or special blocks.",
+          "2": "Synchronization with your calendar or management system to avoid overbookings."
+        }
+      },
+      "feature_3": {
+        "title": "Reservation Personalization",
+        "items": {
+          "1": "Allows you to customize the fields customers must complete when making a reservation (name, number of people, special requests, etc.).",
+          "2": "Option to add additional services to the reservation (such as menu options, extra services, discounts, etc.)."
+        }
+      },
+      "feature_4": {
+        "title": "Notifications and Reminders",
+        "items": {
+          "1": "Automatic notifications via email or SMS to confirm, remind, or modify the reservation.",
+          "2": "Personalized reminders for customers about their appointment or booking, reducing no-shows."
+        }
+      },
+      "feature_5": {
+        "title": "Integrated Payments",
+        "items": {
+          "1": "Option to allow online payments at the time of booking (ideal for businesses requiring a deposit or full payment).",
+          "2": "Integration with secure and reliable payment platforms such as credit cards, PayPal, or cash payments upon arrival."
+        }
+      },
+      "feature_6": {
+        "title": "Multiple Types of Reservations",
+        "items": {
+          "1": "Support for different types of bookings such as appointments, group bookings, events, or resources like rooms or tables.",
+          "2": "Flexible configuration to suit different needs (e.g., number of people, appointment duration, etc.)."
+        }
+      },
+      "feature_7": {
+        "title": "Cancellation and Modification Management",
+        "items": {
+          "1": "Simplifies the cancellation or modification process directly from the platform, with customizable rules on cancellation times or changes."
+        }
+      }
+    },
+    "Basic Invoice Generator": {
+      "name": "Basic Invoice Generator",
+      "description": "Generate professional invoices effortlessly with our easy-to-use invoice generation tool. Perfect for freelancers, small businesses, and anyone needing a quick and reliable invoicing solution.",
+      "feature_1": {
+        "title": "Invoice Creation",
+        "items": {
+          "1": "Create a customer with name, address, and email.",
+          "2": "Add a list of products or services with their respective quantities, prices, and discounts.",
+          "3": "Automatic calculation of totals, taxes, and discounts.",
+          "4": "Automatically generate a unique invoice number for each invoice."
+        }
+      },
+      "feature_2": {
+        "title": "Customizable Invoice Layout",
+        "items": {
+          "1": "Personalize the invoice with your company's logo and contact information.",
+          "2": "Add custom fields like terms and conditions or additional notes."
+        }
+      },
+      "feature_3": {
+        "title": "Tax Management",
+        "items": {
+          "1": "Supports calculating taxes such as VAT, local taxes, etc.",
+          "2": "Option to display prices with taxes included or broken down."
+        }
+      },
+      "feature_4": {
+        "title": "Invoice History",
+        "items": {
+          "1": "Access a history of all generated invoices."
+        }
+      }
+    }
   }
 }
