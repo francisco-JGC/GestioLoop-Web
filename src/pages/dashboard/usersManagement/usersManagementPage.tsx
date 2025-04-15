@@ -1,7 +1,7 @@
 import { HeaderDashboardPage } from "@/pages/layouts/headerDasboardPage"
 import { DashboardLayout } from "../../layouts/dashboardLayout"
 import { useTranslation } from "react-i18next"
-import { ListExternalUsers } from "./components/list-external-Users"
+import { ListExternalUsers } from "./components/list-external-users"
 
 export const UsersManagementPage = () => {
   const { t } = useTranslation()

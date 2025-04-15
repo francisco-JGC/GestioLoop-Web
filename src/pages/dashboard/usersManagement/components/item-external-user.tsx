@@ -18,7 +18,7 @@ export const ItemExternalUser = ({ user }: IProps) => {
         />
       </TableCell>
       <TableCell>{user.real_name}</TableCell>
-      {/* <TableCell>{user.username}</TableCell> */}
+      <TableCell>{user.username}</TableCell>
       <TableCell>{user.email}</TableCell>
       <TableCell>{user.phone_number}</TableCell>
       <TableCell>{user.branch?.name || "N/A"}</TableCell>
