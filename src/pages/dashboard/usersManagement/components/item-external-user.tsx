@@ -14,6 +14,7 @@ export const ItemExternalUser = ({ user }: IProps) => {
         <RenderAvatar
           image_url={user.image_url}
           chart={user.real_name.charAt(0)}
+          size={10}
         />
       </TableCell>
       <TableCell>{user.real_name}</TableCell>

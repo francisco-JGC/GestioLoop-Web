@@ -6,7 +6,7 @@ interface IProps {
   size?: number
 }
 
-export const RenderAvatar = ({ image_url, chart = 'A', size = 13 }: IProps) => {
+export const RenderAvatar = ({ image_url, chart = 'A', size = 10 }: IProps) => {
   const styles = `rounded-full w-${size} h-${size} border border-[#eeeeee]`
   return (
     <div>
