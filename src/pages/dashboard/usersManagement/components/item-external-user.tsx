@@ -2,6 +2,7 @@ import { TableCell, TableRow } from "@/components/ui/table"
 import { ExternalUser } from "@/infrastructure/api/types/user"
 import { Actions } from "./actions"
 import { RenderAvatar } from "@/shared/components/renderAvatar"
+import { formatUserRole } from "@/shared/utils/formatters"
 
 interface IProps {
   user: ExternalUser
@@ -22,7 +23,7 @@ export const ItemExternalUser = ({ user }: IProps) => {
       <TableCell>{user.email}</TableCell>
       <TableCell>{user.phone_number}</TableCell>
       <TableCell>{user.branch?.name || "N/A"}</TableCell>
-      <TableCell>{user.user_role}</TableCell>
+      <TableCell>{formatUserRole(user.user_role)}</TableCell>
       <TableCell>
         <Actions />
       </TableCell>
