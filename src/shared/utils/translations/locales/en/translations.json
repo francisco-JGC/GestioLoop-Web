@@ -120,7 +120,14 @@
     "description-page": "Manage your team members and their account permissions here.",
     "all-users": "All users",
     "create-user": "Create user",
-    "search-placeholder-user": "Username..."
+    "search-placeholder-user": "Username...",
+    "actions": {
+      "delete": "Delete User",
+      "update": "Update User",
+      "change-password": "Reset Password",
+      "change-role": "Change Permissions",
+      "disable-account": "Disable Account"
+    }
   },
   "services": {
     "title-page": "Our Services",

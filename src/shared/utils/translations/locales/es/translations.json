@@ -120,7 +120,14 @@
     "description-page": "Administre los miembros de su equipo y los permisos de sus cuentas aquí.",
     "all-users": "Todos los usuarios",
     "create-user": "Crear usuario",
-    "search-placeholder-user": "Nombre de usuario..."
+    "search-placeholder-user": "Nombre de usuario...",
+    "actions": {
+      "delete": "Eliminar Usuario",
+      "update": "Actualizar Usuario",
+      "change-password": "Restablecer Contraseña",
+      "change-role": "Cambiar Permisos",
+      "disable-account": "Desactivar Cuenta"
+    }
   },
   "services": {
     "title-page": "Nuestros Servicios",
