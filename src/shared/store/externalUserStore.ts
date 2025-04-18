@@ -12,6 +12,7 @@ interface ExternalUserState {
   setUser: (user: ExternalUser) => void
   updateUser: (user: Partial<ExternalUser> & { id: string }) => void
   clearUsers: () => void
+  deleteUser: (id: string) => void
 }
 
 const useExternalUserStore = create<ExternalUserState>()(
@@ -66,6 +67,12 @@ const useExternalUserStore = create<ExternalUserState>()(
 
       clearUsers: () => {
         set({ users: [], page: 1, hasMore: true, total_users: 0 })
+      },
+      deleteUser: (id) => {
+        set((state) => ({
+          users: state.users.filter((user) => user.id !== id),
+          total_users: state.total_users - 1,
+        }))
       },
     }),
     { name: 'external-users-storage' }
