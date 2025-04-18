@@ -27,7 +27,7 @@ export const ItemExternalUser = ({ user, t }: IProps) => {
       <TableCell>{user.branch?.name || "N/A"}</TableCell>
       <TableCell>{formatUserRole(user.user_role)}</TableCell>
       <TableCell>
-        <Actions t={t} />
+        <Actions t={t} user={user} />
       </TableCell>
     </TableRow>
   )
