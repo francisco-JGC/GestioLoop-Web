@@ -48,7 +48,10 @@
     "actions": "Actions",
     "action": "Action",
     "password": "Password",
-    "real_name": "Real Name"
+    "real_name": "Real Name",
+    "You already have this service": "You already have this service",
+    "unexpected-error": "Unexpected Error",
+    "unexpected-error-description": "An unexpected error occurred. Please try again later or contact support."
   },
   "page_404": {
     "title": "404 error",
@@ -122,6 +125,9 @@
   "services": {
     "title-page": "Our Services",
     "description-page": "Discover the tools that will make your business more efficient. From automation to advanced management, we have what you need.",
+    "hire-service": "Hire Service",
+    "hire-title-dialog": "Are you sure you want to hire this service?",
+    "hire-description-dialog": "Please confirm your request before proceeding.",
 
     "Inventory Management": {
       "name": "Inventory Management",

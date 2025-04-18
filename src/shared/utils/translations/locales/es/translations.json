@@ -48,7 +48,10 @@
     "actions": "Acciones",
     "action": "Acción",
     "password": "Contraseña",
-    "real_name": "Nombre real"
+    "real_name": "Nombre real",
+    "You already have this service": "Ya has contratado este servicio",
+    "unexpected-error": "Error inesperado",
+    "unexpected-error-description": "Ocurrió un error inesperado. Por favor, intenta de nuevo más tarde o contacta al soporte."
   },
   "page_404": {
     "title": "Error 404",
@@ -122,6 +125,9 @@
   "services": {
     "title-page": "Nuestros Servicios",
     "description-page": "Descubre las herramientas que harán tu negocio más eficiente. Desde la automatización hasta la gestión avanzada, tenemos lo que necesitas.",
+    "hire-service": "Contratar servicio",
+    "hire-title-dialog": "¿Estás seguro de que deseas contratar este servicio?",
+    "hire-description-dialog": "Por favor, confirma tu solicitud antes de continuar.",
 
     "Inventory Management": {
       "name": "Gestión de Inventarios",
