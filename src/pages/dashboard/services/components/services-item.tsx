@@ -6,6 +6,10 @@ import { motion } from "framer-motion";
 import { formatPriceToUSD } from "@/shared/utils/formatters";
 import { Button } from "@heroui/button";
 import { Link } from "react-router-dom";
+import { SystemAlert } from "@/shared/components/systemAlert";
+import { hireServiceById } from "@/infrastructure/api/hooks/servicesHook";
+import { HttpStatusCode } from "axios";
+import { toast } from "sonner";
 
 interface IProps {
   service: Services;
@@ -44,6 +48,29 @@ export const ServicesItem = ({ service, t }: IProps) => {
 
   const adapter = new ServiceAdapter(service, t);
   const serviceData = adapter.getTranslatedData();
+
+  const handleHireService = async (id: string) => {
+    const response = await hireServiceById(id)
+
+    if (response.statusCode === HttpStatusCode.Ok) {
+      toast.success(t('general.request-success'))
+      return
+    }
+
+    if (response.statusCode === HttpStatusCode.Conflict) {
+      toast.warning(t(`general.${response.message}`))
+      return
+    }
+
+    if (response.statusCode === HttpStatusCode.NotFound) {
+      toast.error(t(`general.${response.message}`))
+      return
+    }
+
+    toast.error(t('general.unexpected-error'), {
+      description: t('general.unexpected-error-description')
+    })
+  }
 
   return (
     <motion.div
@@ -84,12 +111,14 @@ export const ServicesItem = ({ service, t }: IProps) => {
         </div>
       </div>
       <div className="py-4 px-6 flex justify-between items-center">
-        <Button variant="shadow" className="rounded-full w-2/4 p-6 bg-amber-400 text-white">
-          Hire service
-        </Button>
+        <SystemAlert title={t('services.hire-title-dialog')} description={t('services.hire-description-dialog')} onConfirm={() => handleHireService(service.id)}>
+          <Button variant="shadow" className="rounded-full w-2/4 p-6 bg-amber-400 text-white">
+            {t('services.hire-service')}
+          </Button>
+        </SystemAlert>
 
         <Link to={''} className="text-gray-400">View details</Link>
       </div>
-    </motion.div>
+    </motion.div >
   );
 };
