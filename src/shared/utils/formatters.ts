@@ -13,10 +13,10 @@ export function formatPriceToUSD(price: number) {
 
 export function formatUserRole(role: number): string {
   const userRole: Record<number, string> = {
-    1: 'SUPER ADMIN',
-    2: 'Admin',
-    3: 'Manager',
-    4: 'Staff',
+    4: 'SUPER ADMIN',
+    3: 'Admin',
+    2: 'Manager',
+    1: 'Staff',
   }
 
   return userRole[role] ?? ''
