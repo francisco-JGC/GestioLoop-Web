@@ -13,7 +13,7 @@ export const SystemAlert = ({ children, title, description, onConfirm }: IProps)
 
   return (
     <AlertDialog>
-      <AlertDialogTrigger className="w-full">{children}</AlertDialogTrigger>
+      <AlertDialogTrigger className="w-full" asChild>{children}</AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>{title}</AlertDialogTitle>
