@@ -21,3 +21,13 @@ export const createExternalUser = async (
   const response = await apiGL.post('/external-users/create', user)
   return response.data
 }
+
+export const softDeleteExternalUser = async (
+  id: string
+): Promise<HttpResponse> => {
+  const response = await apiGL.post('/external-users/soft-delete-user', {
+    userId: id,
+  })
+
+  return response.data
+}
