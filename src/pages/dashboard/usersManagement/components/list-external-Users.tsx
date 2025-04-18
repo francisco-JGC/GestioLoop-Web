@@ -66,7 +66,7 @@ export const ListExternalUsers = ({ t }: IProps) => {
         </TableHeader>
         <TableBody>
           {users.map((user) => (
-            <ItemExternalUser user={user} key={user.id} />
+            <ItemExternalUser user={user} key={user.id} t={t} />
           ))}
           {hasMore && <div ref={ref} style={{ textAlign: "center", padding: "10px" }}>{t('general.loading-toast')}</div>}
         </TableBody>

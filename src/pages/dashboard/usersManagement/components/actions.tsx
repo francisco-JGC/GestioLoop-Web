@@ -1,8 +1,13 @@
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { MoreHorizontal } from "lucide-react"
+import { TFunction } from "i18next"
+import { Key, MoreHorizontal, Pencil, Trash, UserCheck, UserMinus } from "lucide-react"
 
-export const Actions = () => {
+interface IProps {
+  t: TFunction
+}
+
+export const Actions = ({ t }: IProps) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
@@ -12,14 +17,16 @@ export const Actions = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuLabel>Actions</DropdownMenuLabel>
-        <DropdownMenuItem
-        >
-          Copy payment ID
-        </DropdownMenuItem>
+        <DropdownMenuLabel>{t('general.actions')}</DropdownMenuLabel>
+        <DropdownMenuItem><Pencil /> {t('um.actions.update')}</DropdownMenuItem>
+        <DropdownMenuItem><Key /> {t('um.actions.change-password')}</DropdownMenuItem>
+        <DropdownMenuItem><UserCheck /> {t('um.actions.change-role')}</DropdownMenuItem>
+        <DropdownMenuItem><UserMinus /> {t('um.actions.disable-account')}</DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>View customer</DropdownMenuItem>
-        <DropdownMenuItem>View payment details</DropdownMenuItem>
+        <DropdownMenuItem>
+          <Trash className="text-red-400" />
+          {t('um.actions.delete')}
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   )

@@ -3,12 +3,14 @@ import { ExternalUser } from "@/infrastructure/api/types/user"
 import { Actions } from "./actions"
 import { RenderAvatar } from "@/shared/components/renderAvatar"
 import { formatUserRole } from "@/shared/utils/formatters"
+import { TFunction } from "i18next"
 
 interface IProps {
   user: ExternalUser
+  t: TFunction
 }
 
-export const ItemExternalUser = ({ user }: IProps) => {
+export const ItemExternalUser = ({ user, t }: IProps) => {
   return (
     <TableRow key={user.id} className="p-10">
       <TableCell>
@@ -25,7 +27,7 @@ export const ItemExternalUser = ({ user }: IProps) => {
       <TableCell>{user.branch?.name || "N/A"}</TableCell>
       <TableCell>{formatUserRole(user.user_role)}</TableCell>
       <TableCell>
-        <Actions />
+        <Actions t={t} />
       </TableCell>
     </TableRow>
   )
