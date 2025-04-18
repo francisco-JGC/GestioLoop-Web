@@ -28,6 +28,7 @@
     "request-error": "Error en la solicitud",
     "request-success": "Solicitud exitosa",
     "There is already a branch with this name": "Ya existe una sucursal con este nombre",
+    "This user already belongs to a branch": "Este usuario ya pertenece a una sucursal",
     "hire-service": "Contratar servicio",
     "manage-users": "Gestionar usuarios",
     "update": "Actualizar",
@@ -126,7 +127,9 @@
       "update": "Actualizar Usuario",
       "change-password": "Restablecer Contraseña",
       "change-role": "Cambiar Permisos",
-      "disable-account": "Desactivar Cuenta"
+      "disable-account": "Desactivar Cuenta",
+      "delete-title": "¿Estás seguro de que deseas eliminar a este usuario?",
+      "delete-description": "Los registros y acciones realizadas por este usuario se seguirán conservando."
     }
   },
   "services": {

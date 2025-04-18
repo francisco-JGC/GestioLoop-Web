@@ -28,6 +28,7 @@
     "request-error": "Request error",
     "request-success": "Request Success",
     "There is already a branch with this name": "There is already a branch with this name",
+    "This user already belongs to a branch": "This user already belongs to a branch",
     "hire-service": "Hire Service",
     "manage-users": "Manage Users",
     "update": "Update",
@@ -126,7 +127,9 @@
       "update": "Update User",
       "change-password": "Reset Password",
       "change-role": "Change Permissions",
-      "disable-account": "Disable Account"
+      "disable-account": "Disable Account",
+      "delete-title": "Are you sure you want to delete this user?",
+      "delete-description": "Logs and actions performed by this user will continue to be retained."
     }
   },
   "services": {
