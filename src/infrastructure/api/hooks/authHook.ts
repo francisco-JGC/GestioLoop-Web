@@ -5,7 +5,7 @@ import { Register } from '../types/login.types'
 
 export const login = async (
   session_field: string,
-  password: string
+  password: string,
 ): Promise<HttpResponse> => {
   const response = await apiGL.post('/auth/login', { session_field, password })
   return response.data
@@ -17,7 +17,7 @@ export const refreshToken = async (): Promise<HttpResponse> => {
 }
 
 export const checkSession = async (): Promise<HttpResponse> => {
-  const response = await apiGL.post('/auth/check-session')
+  const response = await apiGL.get('/auth/check-session')
   return response.data
 }
 

@@ -7,6 +7,7 @@ import {
   checkSession,
 } from '@/infrastructure/api/hooks/authHook'
 import { HttpStatusCode } from 'axios'
+import { clearTenantScopedStores } from '@/shared/store/clearTenantScopedStores'
 
 export enum UserRole {
   SUPER_ADMIN = 4,
@@ -55,6 +56,7 @@ const useAuthStore = create<AuthState>()(
           const response = await login(session_field, password)
 
           if (response.statusCode === HttpStatusCode.Ok) {
+            clearTenantScopedStores()
             set({
               isAuthenticated: true,
               user: response.data,
@@ -78,11 +80,17 @@ const useAuthStore = create<AuthState>()(
           const response = await refreshToken()
 
           if (response.statusCode !== HttpStatusCode.Ok) {
+            clearTenantScopedStores()
             set({ isAuthenticated: false, user: null })
           }
         } catch (error) {
           console.error('Token refresh error:', error)
-          set({ error: 'Failed to refresh token' })
+          clearTenantScopedStores()
+          set({
+            isAuthenticated: false,
+            user: null,
+            error: 'Failed to refresh token',
+          })
         }
       },
 
@@ -91,6 +99,7 @@ const useAuthStore = create<AuthState>()(
 
         try {
           await logout()
+          clearTenantScopedStores()
           set({ user: null, isAuthenticated: false, error: null })
         } catch (error) {
           console.error('Logout error:', error)
@@ -105,9 +114,11 @@ const useAuthStore = create<AuthState>()(
           const response = await checkSession()
 
           if (response.statusCode !== HttpStatusCode.Ok) {
+            clearTenantScopedStores()
             set({ isAuthenticated: false, user: null })
             throw new Error('Session check failed')
           } else {
+            clearTenantScopedStores()
             set({
               user: response?.data?.user,
               isAuthenticated: true,
@@ -116,6 +127,7 @@ const useAuthStore = create<AuthState>()(
           }
         } catch (error) {
           console.error('Session check error:', error)
+          clearTenantScopedStores()
           set({
             user: null,
             isAuthenticated: false,

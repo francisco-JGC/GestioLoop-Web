@@ -1,5 +1,4 @@
 import { create } from 'zustand'
-import { persist } from 'zustand/middleware'
 import type { ExternalUser } from '@/infrastructure/api/types/user'
 
 interface ExternalUserState {
@@ -15,68 +14,61 @@ interface ExternalUserState {
   deleteUser: (id: string) => void
 }
 
-const useExternalUserStore = create<ExternalUserState>()(
-  persist(
-    (set) => ({
-      users: [],
-      page: 1,
-      total_users: 0,
-      hasMore: true,
+const useExternalUserStore = create<ExternalUserState>()((set) => ({
+  users: [],
+  page: 1,
+  total_users: 0,
+  hasMore: true,
 
-      setUsers: (newUsers, page, hasMore) => {
-        set((state) => ({
-          users: [
-            ...state.users.filter(
-              (existingUser) =>
-                !newUsers.some((newUser) => newUser.id === existingUser.id)
-            ),
-            ...newUsers,
-          ],
-          page,
-          hasMore,
-        }))
-      },
+  setUsers: (newUsers, page, hasMore) => {
+    set((state) => ({
+      users: [
+        ...state.users.filter(
+          (existingUser) =>
+            !newUsers.some((newUser) => newUser.id === existingUser.id),
+        ),
+        ...newUsers,
+      ],
+      page,
+      hasMore,
+    }))
+  },
 
-      setTotalUsers: (total_users) => set({ total_users }),
+  setTotalUsers: (total_users) => set({ total_users }),
 
-      setUser: (user) => {
-        set((state) => {
-          const existingUser = state.users.find((u) => u.id === user.id)
-          if (
-            existingUser &&
-            JSON.stringify(existingUser) === JSON.stringify(user)
-          ) {
-            return state
-          }
-          return {
-            users: existingUser
-              ? state.users.map((u) => (u.id === user.id ? user : u))
-              : [...state.users, user],
-            total_users: state.total_users + 1,
-          }
-        })
-      },
+  setUser: (user) => {
+    set((state) => {
+      const existingUser = state.users.find((u) => u.id === user.id)
+      if (
+        existingUser &&
+        JSON.stringify(existingUser) === JSON.stringify(user)
+      ) {
+        return state
+      }
+      return {
+        users: existingUser
+          ? state.users.map((u) => (u.id === user.id ? user : u))
+          : [...state.users, user],
+        total_users: state.total_users + 1,
+      }
+    })
+  },
 
-      updateUser: (user) => {
-        set((state) => ({
-          users: state.users.map((u) =>
-            u.id === user.id ? { ...u, ...user } : u
-          ),
-        }))
-      },
+  updateUser: (user) => {
+    set((state) => ({
+      users: state.users.map((u) => (u.id === user.id ? { ...u, ...user } : u)),
+    }))
+  },
 
-      clearUsers: () => {
-        set({ users: [], page: 1, hasMore: true, total_users: 0 })
-      },
-      deleteUser: (id) => {
-        set((state) => ({
-          users: state.users.filter((user) => user.id !== id),
-          total_users: state.total_users - 1,
-        }))
-      },
-    }),
-    { name: 'external-users-storage' }
-  )
-)
+  clearUsers: () => {
+    set({ users: [], page: 1, hasMore: true, total_users: 0 })
+  },
+  deleteUser: (id) => {
+    set((state) => ({
+      users: state.users.filter((user) => user.id !== id),
+      total_users: state.total_users - 1,
+    }))
+  },
+}))
 
 export default useExternalUserStore

@@ -20,10 +20,19 @@ export const apiGL: AxiosInstance = axios.create({
   withCredentials: true,
 })
 
+function shouldSkipBranchHeader(config: InternalAxiosRequestConfig): boolean {
+  const path = (config.url ?? '').split('?')[0]
+  const method = (config.method ?? 'get').toLowerCase()
+  return (
+    method === 'get' &&
+    (path === '/branch/branches' || path.endsWith('/branch/branches'))
+  )
+}
+
 apiGL.interceptors.request.use((config: InternalAxiosRequestConfig) => {
   const selectedBranch = useBranchesStore.getState().selectedBranch
 
-  if (selectedBranch) {
+  if (!shouldSkipBranchHeader(config) && selectedBranch) {
     config.headers['X-Branch-ID'] = selectedBranch.id
   }
 

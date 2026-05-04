@@ -16,27 +16,33 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar"
 import useBranchesStore from "@/shared/store/branchesStore"
+import useAuthStore from "@/shared/store/authStore"
 import { useEffect } from "react"
 import { getBranches } from "@/infrastructure/api/hooks/branchesHook"
 import { toast } from "sonner"
 
 export function NavBranch() {
   const { isMobile } = useSidebar()
-  const { branches, selectedBranch, setBranches, setSelectedBranch } = useBranchesStore()
+  const userId = useAuthStore((s) => s.user?.id)
+  const { branches, selectedBranch, setBranches, setSelectedBranch, reset } =
+    useBranchesStore()
 
   useEffect(() => {
-    if (!branches || branches.length === 0) {
-      getBranches()
-        .then((response) => {
-          if (response && response.length > 0) {
-            setBranches(response);
-            setSelectedBranch(response[0].id);
-          }
-        })
-        .catch(() => toast.error('error'));
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [getBranches, setBranches, setSelectedBranch]);
+    if (!userId) return
+
+    reset()
+
+    getBranches()
+      .then((response) => {
+        if (response && response.length > 0) {
+          setBranches(response)
+          setSelectedBranch(response[0].id)
+        } else {
+          reset()
+        }
+      })
+      .catch(() => toast.error('error'))
+  }, [userId, reset, setBranches, setSelectedBranch])
 
   return (
     <SidebarMenu>
